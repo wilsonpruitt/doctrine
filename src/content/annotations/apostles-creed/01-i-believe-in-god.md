@@ -159,11 +159,15 @@ The 1780 *Collection of Hymns for the Use of the People Called Methodists* puts 
 
 ## Pastoral and Liturgical Use
 
-For congregations who pray the creed week by week, "I believe in God" is the line that most often carries weight on a particular Sunday. Some weeks the believer says it easily; some weeks they say it because the rest of the room is saying it; some weeks they say it as something between an assertion and a question.
+The first thing to notice about "I believe in God" is that it is a *transitive* sentence. *Credo* takes an object. The believer is not affirming that they have faith generally, that they are spiritually inclined, that they are open to mystery. The believer is saying they have given their heart to *this* — to the God named in the lines that follow. The English "I believe in God" can drift toward the intransitive sense (*I am a believing kind of person*); the Latin and Greek cannot.
 
-This is not a failure of faith. It is what faith looks like over a lifetime. The Apostles' Creed is a baptismal creed — it is what we said to enter the church, and what we return to whenever we cannot say much else. The "I" speaks for the whole self, including the parts of the self that doubt.
+This matters in the contemporary spiritual landscape. "I'm spiritual but not religious" is an intransitive faith — a faith with no object, or with a vague one. It is not the faith of the Apostles' Creed. Calvin's image — that the human heart is an idol factory — is the diagnosis the creed presupposes: left to ourselves, we will believe in something, but not necessarily in God. The creed is the church's discipline against that drift. It names the object.
 
-For pastors: the line gives permission. It does not require certainty; it requires that the heart be given, however haltingly. Wesley's faith-of-a-servant category is the pastoral gift here. Many in the pews are servants this morning. The line still belongs to them.
+1 John 4 puts it bluntly: *test the spirits — whether they are from God.* The creed is one of the church's oldest tests. To say "I believe in God" in this baptismal first-person singular is to declare, with the church across two thousand years, that one's faith has *this* object and not another.
+
+There is an everyday word, in English, for what *credo* means. The closest etymological relative is *credit* — third person ("she or he believes," extending trust on the strength of a promise). Most people encounter *credo* more often in financial form than in religious form. The pastoral question follows: what do we extend our credo to, in practice? In what economy do we trust? Ezekiel speaks against extracting interest from the poor in the starkest possible terms (Ezek. 18). The creed and the prophet are not on different topics. The faith we extend to the Father almighty is the faith we are *not* extending to other masters.
+
+For pastors: the line gives permission. It does not require certainty; it requires that the heart be given, however haltingly. Wesley's faith-of-a-servant category — the believer who fears God and obeys but cannot yet feel themselves loved — covers many in the pews this morning, and Wesley named it as real faith. The line still belongs to them.
 
 ## Further Reading
 

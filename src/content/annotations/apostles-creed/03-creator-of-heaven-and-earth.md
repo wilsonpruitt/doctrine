@@ -175,13 +175,17 @@ Where the Wesleys' hymns are thin on pure creation-praise, **Isaac Watts** — w
 
 ## Pastoral and Liturgical Use
 
-What does a congregation in 2026 say when it confesses "creator of heaven and earth"?
+What does a congregation say when it confesses "creator of heaven and earth"?
 
-At minimum, it says that what is, is not self-explanatory. The universe is contingent — it did not have to exist — and that it does exist is gift, not necessity. This is a confession of radical thanksgiving before it is a metaphysical claim. To pray the line slowly, with attention, is to receive again the fact that one's life and the world are given.
+It says, first, that the world is not necessary. The universe did not have to exist. That it does exist — that there is anything at all, that there is *this* anything — is gift, not given. The pastoral mode the clause asks for is therefore radical thanksgiving. We did not earn the world. We did not invent ourselves. We are creatures, and we have been received into a creation we did not make.
 
-For congregations wrestling with theology and science: the creed does not require young-earth chronology or six-day literalism, and never has. The patristic and medieval traditions read Gen. 1 figuratively as often as literally — Augustine's *On the Literal Meaning of Genesis* is in fact a sustained argument against simple literalism. To pray "creator of heaven and earth" is not to commit oneself to any particular cosmology. It is to confess that *whatever* the universe is, the Father of Jesus Christ is its source and its purpose.
+Hebrews 11 puts it crisply: *what is seen was not made out of things that are visible*. The visible universe rests on something other than itself. Modern cosmology can describe the unfolding of the visible from the Big Bang forward, but it cannot answer why anything is at all. The creed's clause is not in competition with cosmology; it answers a question cosmology cannot ask. *Whatever* the universe is in its mechanism, the Father of Jesus Christ is its source and its purpose.
 
-For congregations facing the climate crisis: the clause licenses care for creation as a confessional matter, not merely an ethical one. The Father almighty who made heaven and earth is not indifferent to what becomes of it. The Methodist movement's historic commitment to social holiness has, in the last fifty years, extended naturally to creation care, and the creed grounds that extension. To confess "creator" is to confess a Father who has not abandoned his creation — and, by implication, a church that cannot either.
+The pastoral force of this is uncomfortable. If the world is gift, the believer is not entitled to it. Not entitled to a comfortable life. Not entitled to a society like the one of one's childhood. Not entitled to "Christian culture," "biblical values," "family values" — none of which the gospel actually promises and several of which have been used historically to license sins the gospel actually condemns. Jesus does not give us a culture to defend; he gives us life, redemption, transformation. The creed grounds this: we are creatures, not owners; recipients, not entitled parties. The proper response to gift is praise, and then the giving away of what we have been given.
+
+For congregations wrestling with theology and science: the creed does not require young-earth chronology or six-day literalism, and never has. The patristic and medieval traditions read Gen. 1 figuratively as often as literally — Augustine's *On the Literal Meaning of Genesis* is in fact a sustained argument against simple literalism. To pray "creator of heaven and earth" is not to commit oneself to any particular cosmology. It is to confess that the Father of Jesus Christ is the source of what is.
+
+For congregations facing the climate crisis: the clause licenses care for creation as a confessional matter, not merely an ethical add-on. The Father almighty who made heaven and earth is not indifferent to what becomes of it; and a church that confesses him cannot be either. The Methodist movement's commitment to social holiness has, in the last fifty years, naturally extended to creation care. The creed grounds that extension.
 
 ## Further Reading
 
