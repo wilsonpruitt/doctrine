@@ -7,13 +7,25 @@ export async function getStaticPaths() {
   const annotations = await getCollection('annotations', (a) => !a.data.draft);
   return annotations
     .filter((a) => docs.some((d) => d.data.slug === a.data.document))
-    .map((a) => ({
-      params: { slug: a.data.document, phrase: a.data.phrase_slug },
-      props: { annotation: a, doc: docs.find((d) => d.data.slug === a.data.document)! },
-    }));
+    .map((a) => {
+      const siblings = annotations
+        .filter((b) => b.data.document === a.data.document)
+        .sort((x, y) => x.data.order - y.data.order);
+      const idx = siblings.findIndex((b) => b.data.phrase_slug === a.data.phrase_slug);
+      return {
+        params: { slug: a.data.document, phrase: a.data.phrase_slug },
+        props: {
+          annotation: a,
+          doc: docs.find((d) => d.data.slug === a.data.document)!,
+          siblings,
+          prev: idx > 0 ? siblings[idx - 1] : null,
+          next: idx < siblings.length - 1 ? siblings[idx + 1] : null,
+        },
+      };
+    });
 }
 
-const { annotation, doc } = Astro.props;
+const { annotation, doc, siblings, prev, next } = Astro.props;
 const { Content, headings } = await render(annotation);
 const f = annotation.data;
 
@@ -131,6 +143,27 @@ const contestedLabel: Record<typeof f.contested, string> = {
           </ul>
         </section>
       )}
+
+      <nav class="prev-next" aria-label="Adjacent phrases">
+        <div class="prev-next-cell prev-cell">
+          {prev && (
+            <a href={`/creeds/${doc.data.slug}/${prev.data.phrase_slug}`}>
+              <span class="arrow">←</span>
+              <span class="label">Previous</span>
+              <span class="phrase">{prev.data.phrase_display}</span>
+            </a>
+          )}
+        </div>
+        <div class="prev-next-cell next-cell">
+          {next && (
+            <a href={`/creeds/${doc.data.slug}/${next.data.phrase_slug}`}>
+              <span class="label">Next</span>
+              <span class="phrase">{next.data.phrase_display}</span>
+              <span class="arrow">→</span>
+            </a>
+          )}
+        </div>
+      </nav>
     </article>
 
     {navHeadings.length > 1 && (
@@ -147,4 +180,22 @@ const contestedLabel: Record<typeof f.contested, string> = {
       </aside>
     )}
   </div>
+
+  <section class="inline-creed" aria-label="The full creed">
+    <p class="inline-creed-label">{doc.data.title}</p>
+    <p class="inline-creed-text">
+      {siblings.map((s, i) => (
+        <>
+          {s.data.phrase_slug === f.phrase_slug ? (
+            <span class={`phrase c-${s.data.contested} current`}>{s.data.phrase_display}</span>
+          ) : (
+            <a
+              class={`phrase c-${s.data.contested}`}
+              href={`/creeds/${doc.data.slug}/${s.data.phrase_slug}`}
+            >{s.data.phrase_display}</a>
+          )}{i < siblings.length - 1 ? ' ' : ''}
+        </>
+      ))}
+    </p>
+  </section>
 </Base>
