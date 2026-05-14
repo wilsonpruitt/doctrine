@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="topnav">
+      <a href="/" class="brand">Doctrine</a>
+      <span class="navlinks">
+        <a href="/">Creeds</a>
+        <a href="/about">About</a>
+      </span>
+    </nav>
+    <main class="prose">
+      <slot />
+    </main>
+    <footer>
+      <p>
+        A Wroot Press reference companion to
+        <a href="https://difficult-passages.netlify.app">Difficult Passages</a>.
+      </p>
+    </footer>
+  </body>
+</html>
