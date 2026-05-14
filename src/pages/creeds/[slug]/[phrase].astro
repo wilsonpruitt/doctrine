@@ -14,100 +14,137 @@ export async function getStaticPaths() {
 }
 
 const { annotation, doc } = Astro.props;
-const { Content } = await render(annotation);
+const { Content, headings } = await render(annotation);
 const f = annotation.data;
+
+// Only h2/h3 — h1 is the phrase title rendered above the body
+const navHeadings = headings.filter((h) => h.depth === 2);
+
+const contestedLabel: Record<typeof f.contested, string> = {
+  high: 'highly contested',
+  medium: 'moderately contested',
+  low: 'well-settled',
+};
 ---
 
 <Base
   title={`${f.phrase_display} — ${doc.data.title}`}
-  description={`Annotation on “${f.phrase_display}” in ${doc.data.title}.`}
+  description={`Annotation on "${f.phrase_display}" in ${doc.data.title}.`}
+  wide
 >
-  <p class="crumbs">
-    <a href="/">Doctrine</a> · <a href={`/creeds/${doc.data.slug}`}>{doc.data.title}</a>
-  </p>
-  <h1>{f.phrase_display}</h1>
+  <div class="annotation-layout">
+    <article class="annotation-main">
+      <p class="crumbs">
+        <a href="/">Doctrine</a> · <a href={`/creeds/${doc.data.slug}`}>{doc.data.title}</a>
+      </p>
+      <h1>{f.phrase_display}</h1>
 
-  {(f.latin || f.greek || f.original_english) && (
-    <dl class="source-block">
-      {f.latin && (
-        <>
-          <dt>Latin</dt>
-          <dd>
-            <em>{f.latin}</em>
-            {f.latin_note && <span class="note">{f.latin_note}</span>}
-            {f.latin_variants && f.latin_variants.map((v) => (
-              <span class="note">variant: <em>{v.text}</em>{v.note ? ` — ${v.note}` : ''}</span>
-            ))}
-          </dd>
-        </>
-      )}
-      {f.greek && (
-        <>
-          <dt>Greek</dt>
-          <dd>
-            <em>{f.greek}</em>
-            {f.greek_note && <span class="note">{f.greek_note}</span>}
-            {f.greek_variants && f.greek_variants.map((v) => (
-              <span class="note">variant: <em>{v.text}</em>{v.note ? ` — ${v.note}` : ''}</span>
-            ))}
-          </dd>
-        </>
-      )}
-      {f.original_english && (
-        <>
-          <dt>Original English</dt>
-          <dd>
-            <em>{f.original_english}</em>
-            {f.original_english_note && <span class="note">{f.original_english_note}</span>}
-          </dd>
-        </>
-      )}
-    </dl>
-  )}
+      <p class="contested-line">
+        <span class={`contested-pill c-${f.contested}`}>{contestedLabel[f.contested]}</span>
+      </p>
 
-  <table class="translations">
-    <thead>
-      <tr><th>Version</th><th>Rendering</th></tr>
-    </thead>
-    <tbody>
-      {f.translations.map((t) => (
-        <tr>
-          <th scope="row">{t.version}</th>
-          <td>
-            {t.text}
-            {t.note && <span class="note">{t.note}</span>}
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
+      {(f.latin || f.greek || f.original_english) && (
+        <dl class="source-block">
+          {f.latin && (
+            <>
+              <dt>Latin</dt>
+              <dd>
+                <em>{f.latin}</em>
+                {f.latin_note && <span class="note">{f.latin_note}</span>}
+                {f.latin_variants && f.latin_variants.map((v) => (
+                  <span class="note">variant: <em>{v.text}</em>{v.note ? ` — ${v.note}` : ''}</span>
+                ))}
+              </dd>
+            </>
+          )}
+          {f.greek && (
+            <>
+              <dt>Greek</dt>
+              <dd>
+                <em>{f.greek}</em>
+                {f.greek_note && <span class="note">{f.greek_note}</span>}
+                {f.greek_variants && f.greek_variants.map((v) => (
+                  <span class="note">variant: <em>{v.text}</em>{v.note ? ` — ${v.note}` : ''}</span>
+                ))}
+              </dd>
+            </>
+          )}
+          {f.original_english && (
+            <>
+              <dt>Original English</dt>
+              <dd>
+                <em>{f.original_english}</em>
+                {f.original_english_note && <span class="note">{f.original_english_note}</span>}
+              </dd>
+            </>
+          )}
+        </dl>
+      )}
 
-  <div class="tag-row">
-    <span class={`tag contested ${f.contested}`}>{f.contested} contested</span>
-    {f.traditions.map((t) => (
-      <span class="tag">{t.replace(/_/g, ' ')}</span>
-    ))}
+      <table class="translations">
+        <thead>
+          <tr><th>Version</th><th>Rendering</th></tr>
+        </thead>
+        <tbody>
+          {f.translations.map((t) => (
+            <tr>
+              <th scope="row">{t.version}</th>
+              <td>
+                {t.text}
+                {t.note && <span class="note">{t.note}</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {f.traditions.length > 0 && (
+        <p class="traditions-line">
+          <span class="meta-label">Traditions cited</span>
+          {f.traditions.map((t, i) => (
+            <>
+              {i > 0 && <span class="dot">·</span>}
+              <span class="tradition">{t.replace(/_/g, ' ')}</span>
+            </>
+          ))}
+        </p>
+      )}
+
+      <div class="annotation-body">
+        <Content />
+      </div>
+
+      {f.related.length > 0 && (
+        <section class="related">
+          <h3>Related</h3>
+          <ul>
+            {f.related.map((r) => {
+              const [docSlug, phraseSlug] = r.split('/');
+              return (
+                <li>
+                  <a href={`/creeds/${docSlug}/${phraseSlug}`}>
+                    {docSlug} — {phraseSlug.replace(/-/g, ' ')}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+    </article>
+
+    {navHeadings.length > 1 && (
+      <aside class="annotation-toc" aria-label="Sections">
+        <p class="toc-label">On this page</p>
+        <ol>
+          {navHeadings.map((h) => (
+            <li><a href={`#${h.slug}`}>{h.text}</a></li>
+          ))}
+        </ol>
+        <p class="toc-foot">
+          <a href={`/creeds/${doc.data.slug}`}>← Back to spine</a>
+        </p>
+      </aside>
+    )}
   </div>
-
-  <article class="annotation-body">
-    <Content />
-  </article>
-
-  {f.related.length > 0 && (
-    <section class="related">
-      <h3>Related</h3>
-      <ul>
-        {f.related.map((r) => {
-          const [docSlug, phraseSlug] = r.split('/');
-          return (
-            <li>
-              <a href={`/creeds/${docSlug}/${phraseSlug}`}>
-                {docSlug} — {phraseSlug.replace(/-/g, ' ')}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
-  )}
 </Base>

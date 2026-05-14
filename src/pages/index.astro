@@ -2,53 +2,108 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 
-const documents = (await getCollection('documents'))
-  .filter((d) => !d.data.draft)
-  .sort((a, b) => a.data.order - b.data.order);
+const liveDocs = await getCollection('documents', (d) => !d.data.draft);
+const docMap = new Map(liveDocs.map((d) => [d.data.slug, d]));
 
-const ecumenical = documents.filter((d) => d.data.family === 'ecumenical');
-const wesleyan = documents.filter((d) => d.data.family === 'wesleyan');
+// Editorial order. Slugs that don't yet have a documents/<slug>.md file render
+// as "forthcoming" entries — placeholder rows in the table of contents.
+const ecumenical: Array<{ slug: string; title: string; subtitle?: string; date?: string; family: 'ecumenical' | 'wesleyan' }> = [
+  { slug: 'apostles-creed',   title: "The Apostles' Creed",   subtitle: 'Symbolum Apostolorum', date: 'Old Roman Symbol c. 215; Textus Receptus c. 750', family: 'ecumenical' },
+  { slug: 'nicene-creed',     title: 'The Nicene Creed',      subtitle: 'with notes on the filioque', date: 'Constantinopolitan, 381', family: 'ecumenical' },
+  { slug: 'athanasian-creed', title: 'The Athanasian Creed',  subtitle: 'Quicunque Vult',           date: 'c. 500',                  family: 'ecumenical' },
+];
+const wesleyan: typeof ecumenical = [
+  { slug: 'general-rules',         title: "Wesley's General Rules",      date: '1743', family: 'wesleyan' },
+  { slug: 'articles-of-religion',  title: 'The Articles of Religion',    subtitle: "Wesley's 1784 abridgment of the Thirty-Nine Articles", date: '1784', family: 'wesleyan' },
+];
+
+function entryFor(stub: typeof ecumenical[number]) {
+  const live = docMap.get(stub.slug);
+  if (live) {
+    return {
+      ...stub,
+      title: live.data.title,
+      subtitle: live.data.subtitle ?? stub.subtitle,
+      date: live.data.date,
+      summary: live.data.summary,
+      live: true,
+    };
+  }
+  return { ...stub, summary: undefined, live: false };
+}
+const ecumenicalEntries = ecumenical.map(entryFor);
+const wesleyanEntries = wesleyan.map(entryFor);
 ---
 
 <Base
   title="Doctrine — Creeds & Confessions"
   description="An annotated reference for the Great Christian Tradition and the Wesleyan Tradition."
+  wide
 >
-  <h1>Doctrine</h1>
-  <p class="lede">
-    An annotated reference for the Great Christian Tradition and the Wesleyan Tradition.
-  </p>
+  <article class="landing">
+    <p class="eyebrow">A Wroot Press reference</p>
+    <h1 class="title">Doctrine</h1>
+    <p class="subtitle">
+      An annotated reference for the Great Christian Tradition and the Wesleyan Tradition.
+    </p>
 
-  <p>
-    The creed is the spine; each phrase is a door into translation history,
-    controversy, interpretation across traditions, and pastoral use. A companion to
-    <a href="https://difficult-passages.netlify.app">Difficult Passages</a>.
-  </p>
+    <p class="intro">
+      The creed is the spine; each phrase is a door into translation history,
+      controversy, interpretation across traditions, and pastoral use. Written for
+      those who pray the creeds and want to know what they are praying. A companion
+      to <a href="https://difficult-passages.netlify.app">Difficult Passages</a>.
+    </p>
 
-  <h2>Ecumenical Creeds</h2>
-  <ul class="doc-list">
-    {ecumenical.map((d) => (
-      <li>
-        <a class="doc-title" href={`/creeds/${d.data.slug}`}>{d.data.title}</a>
-        {d.data.subtitle && <span class="doc-subtitle">{d.data.subtitle}</span>}
-        <div class="doc-date">{d.data.date}</div>
-        <p class="doc-summary">{d.data.summary}</p>
-      </li>
-    ))}
-  </ul>
+    <section class="toc-section">
+      <header class="toc-head">
+        <h2>Ecumenical Creeds</h2>
+        <span class="rule"></span>
+      </header>
+      <ol class="toc">
+        {ecumenicalEntries.map((e) => (
+          <li class={e.live ? '' : 'pending'}>
+            <div>
+              <div class="entry-head">
+                {e.live ? (
+                  <a class="doc-title" href={`/creeds/${e.slug}`}>{e.title}</a>
+                ) : (
+                  <span class="doc-title" style="color: var(--ink-faint);">{e.title}</span>
+                )}
+                {e.subtitle && <span class="doc-subtitle">— {e.subtitle}</span>}
+                {!e.live && <span class="pending-tag">Forthcoming</span>}
+              </div>
+              {e.date && <p class="doc-date">{e.date}</p>}
+              {e.summary && <p class="doc-summary">{e.summary}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
 
-  <h2>Wesleyan Tradition</h2>
-  {wesleyan.length === 0 ? (
-    <p><em>Coming soon: Wesley's General Rules (1743) and the Articles of Religion (1784).</em></p>
-  ) : (
-    <ul class="doc-list">
-      {wesleyan.map((d) => (
-        <li>
-          <a class="doc-title" href={`/wesleyan/${d.data.slug}`}>{d.data.title}</a>
-          <div class="doc-date">{d.data.date}</div>
-          <p class="doc-summary">{d.data.summary}</p>
-        </li>
-      ))}
-    </ul>
-  )}
+    <section class="toc-section">
+      <header class="toc-head">
+        <h2>Wesleyan Tradition</h2>
+        <span class="rule"></span>
+      </header>
+      <ol class="toc">
+        {wesleyanEntries.map((e) => (
+          <li class={e.live ? '' : 'pending'}>
+            <div>
+              <div class="entry-head">
+                {e.live ? (
+                  <a class="doc-title" href={`/wesleyan/${e.slug}`}>{e.title}</a>
+                ) : (
+                  <span class="doc-title" style="color: var(--ink-faint);">{e.title}</span>
+                )}
+                {e.subtitle && <span class="doc-subtitle">— {e.subtitle}</span>}
+                {!e.live && <span class="pending-tag">Forthcoming</span>}
+              </div>
+              {e.date && <p class="doc-date">{e.date}</p>}
+              {e.summary && <p class="doc-summary">{e.summary}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  </article>
 </Base>

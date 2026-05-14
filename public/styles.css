@@ -1,10 +1,13 @@
 :root {
-  --ink: #1a1814;
-  --ink-soft: #4a463f;
-  --ink-faint: #8a857c;
-  --paper: #faf7f1;
-  --rule: #d8d2c4;
-  --accent: #6b2c2c;
+  --ink: #14171c;
+  --ink-soft: #3d434c;
+  --ink-faint: #8b8f97;
+  --paper: #ffffff;
+  --paper-tint: #f6f4ee;
+  --rule: #e4e1d8;
+  --rule-strong: #c9c5b8;
+  --accent: #1f3a68;
+  --accent-strong: #142648;
   --serif: "Iowan Old Style", "Hoefler Text", Cambria, Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -56,6 +59,11 @@ main.prose {
   margin: 2.5rem auto;
   padding: 0 1.25rem;
 }
+main.wide {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
 
 footer {
   border-top: 1px solid var(--rule);
@@ -97,7 +105,7 @@ h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
   padding: 0 2px;
 }
 .spine .phrase:hover {
-  background: #f3ecd9;
+  background: var(--paper-tint);
   border-bottom-style: solid;
 }
 .spine .phrase.c-high {
@@ -130,6 +138,129 @@ h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
 .spine-legend .c-medium { color: var(--ink); border-color: var(--ink-soft); }
 .spine-legend .c-low { color: var(--ink-soft); border-color: var(--rule); border-bottom-style: dashed; }
 
+/* Annotation layout: main + sticky section sidebar */
+.annotation-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 38rem) 14rem;
+  gap: 3rem;
+  max-width: 60rem;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  align-items: start;
+}
+.annotation-main { min-width: 0; }
+.annotation-toc {
+  position: sticky;
+  top: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  border-left: 1px solid var(--rule);
+  padding-left: 1.25rem;
+}
+.annotation-toc .toc-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.6rem;
+}
+.annotation-toc ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.annotation-toc li {
+  margin: 0.45rem 0;
+  line-height: 1.35;
+}
+.annotation-toc a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  border-bottom: 1px solid transparent;
+}
+.annotation-toc a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.annotation-toc .toc-foot {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+}
+.annotation-toc .toc-foot a { color: var(--ink-faint); }
+@media (max-width: 60rem) {
+  .annotation-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .annotation-toc {
+    position: static;
+    border-left: none;
+    border-top: 1px solid var(--rule);
+    padding: 1rem 0 0;
+    order: -1;
+  }
+}
+
+/* Contested badge — clearly a label, not a tappable chip */
+.contested-line {
+  margin: 0.25rem 0 1.5rem;
+}
+.contested-pill {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 2px;
+}
+.contested-pill.c-high {
+  background: var(--accent);
+  color: #fff;
+}
+.contested-pill.c-medium {
+  background: var(--ink-soft);
+  color: #fff;
+}
+.contested-pill.c-low {
+  background: transparent;
+  color: var(--ink-faint);
+  border: 1px solid var(--rule-strong);
+  padding: 0.15rem 0.6rem;
+}
+
+/* Traditions: inline metadata, not chips */
+.traditions-line {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 1.5rem 0 2rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.traditions-line .meta-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-right: 0.85rem;
+}
+.traditions-line .tradition {
+  color: var(--ink);
+}
+.traditions-line .dot {
+  color: var(--ink-faint);
+  margin: 0 0.45rem;
+}
+
+/* Anchor offset so headings clear the page top when jumped to */
+.annotation-body :is(h2, h3) {
+  scroll-margin-top: 1.5rem;
+}
+
 /* Annotation page */
 .crumbs {
   font-family: var(--sans);
@@ -140,10 +271,10 @@ h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
 .crumbs a { color: var(--ink-soft); }
 
 .source-block {
-  background: #f3ecd9;
+  background: var(--paper-tint);
   border-left: 3px solid var(--accent);
-  padding: 0.75rem 1rem;
-  margin: 1.25rem 0;
+  padding: 0.85rem 1.1rem;
+  margin: 1.5rem 0;
   font-size: 0.95rem;
 }
 .source-block dt {
@@ -238,36 +369,141 @@ h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
 }
 .related ul { margin: 0; padding-left: 1.2rem; }
 
-/* Index page */
-.doc-list {
+/* Landing page */
+.landing {
+  max-width: 44rem;
+  margin: 4rem auto 0;
+  padding: 0 1.5rem;
+}
+.landing .eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 1.25rem;
+}
+.landing h1.title {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+}
+.landing .subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin: 0 0 2.5rem;
+  max-width: 32rem;
+}
+.landing .intro {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink);
+  max-width: 34rem;
+  margin: 0 0 3.5rem;
+}
+.landing .intro a { color: var(--accent); }
+
+.toc-section {
+  margin: 3rem 0;
+}
+.toc-section .toc-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.toc-section .toc-head h2 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  margin: 0;
+}
+.toc-section .toc-head .rule {
+  height: 1px;
+  background: var(--rule-strong);
+  align-self: center;
+}
+
+.toc {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0;
+  margin: 0;
+  counter-reset: toc;
 }
-.doc-list li {
-  margin: 1.5rem 0;
-  padding-bottom: 1.5rem;
+.toc > li {
+  counter-increment: toc;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  padding: 1.1rem 0;
   border-bottom: 1px solid var(--rule);
 }
-.doc-list li:last-child { border-bottom: none; }
-.doc-list .doc-title {
-  font-size: 1.25rem;
-  text-decoration: none;
+.toc > li::before {
+  content: counter(toc, upper-roman) ".";
+  font-family: var(--serif);
+  font-feature-settings: "onum" 1;
+  color: var(--ink-faint);
+  font-size: 0.95rem;
+  padding-top: 0.15rem;
+  text-align: right;
+}
+.toc > li.pending::before { color: var(--rule-strong); }
+
+.toc .entry-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.toc .doc-title {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.2;
   color: var(--ink);
-  border-bottom: 1px solid var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
-.doc-list .doc-subtitle {
-  color: var(--ink-faint);
+.toc .doc-title:hover {
+  border-bottom-color: var(--accent);
+}
+.toc .doc-subtitle {
+  font-family: var(--serif);
   font-style: italic;
-  margin-left: 0.5rem;
-}
-.doc-list .doc-summary {
-  margin: 0.4rem 0 0;
   color: var(--ink-soft);
+  font-size: 1.05rem;
 }
-.doc-list .doc-date {
+.toc .doc-date {
   font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   color: var(--ink-faint);
-  margin-top: 0.25rem;
+  margin: 0.25rem 0 0;
+}
+.toc .doc-summary {
+  font-family: var(--serif);
+  color: var(--ink-soft);
+  margin: 0.4rem 0 0;
+  line-height: 1.5;
+  max-width: 32rem;
+}
+.toc .pending-tag {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  margin-left: auto;
 }

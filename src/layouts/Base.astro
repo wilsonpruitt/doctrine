@@ -2,8 +2,9 @@
 interface Props {
   title: string;
   description?: string;
+  wide?: boolean;
 }
-const { title, description } = Astro.props;
+const { title, description, wide = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -23,7 +24,7 @@ const { title, description } = Astro.props;
         <a href="/about">About</a>
       </span>
     </nav>
-    <main class="prose">
+    <main class={wide ? 'wide' : 'prose'}>
       <slot />
     </main>
     <footer>
