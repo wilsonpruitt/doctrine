@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+
+const documents = (await getCollection('documents'))
+  .filter((d) => !d.data.draft)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const ecumenical = documents.filter((d) => d.data.family === 'ecumenical');
+const wesleyan = documents.filter((d) => d.data.family === 'wesleyan');
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Doctrine — Creeds & Confessions</title>
+    <meta
+      name="description"
+      content="An annotated reference for the Great Christian Tradition and the Wesleyan Tradition."
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Doctrine</h1>
+      <p>An annotated reference for the Great Christian Tradition and the Wesleyan Tradition.</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Ecumenical Creeds</h2>
+        <ul>
+          {ecumenical.map((d) => (
+            <li>
+              <a href={`/creeds/${d.data.slug}`}>{d.data.title}</a>
+              {d.data.subtitle && <span> — <em>{d.data.subtitle}</em></span>}
+              <p>{d.data.summary}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Wesleyan Tradition</h2>
+        {wesleyan.length === 0 ? (
+          <p><em>Coming soon.</em></p>
+        ) : (
+          <ul>
+            {wesleyan.map((d) => (
+              <li>
+                <a href={`/wesleyan/${d.data.slug}`}>{d.data.title}</a>
+                <p>{d.data.summary}</p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </main>
+  </body>
+</html>
