@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 node_modules/
 .vercel
+
+# Resume prompt for fresh sessions — local-only handoff doc
+RESUME-PROMPT.md
