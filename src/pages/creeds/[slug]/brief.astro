@@ -51,11 +51,18 @@ for (const a of annotations) {
   }
   groups[groups.length - 1].items.push(a);
 }
+
+const esDoc = await getCollection(
+  'documents',
+  (d) => d.data.slug === doc.data.slug && d.data.lang === 'es',
+);
+const esHref = esDoc.length ? `/es/creeds/${doc.data.slug}/brief` : undefined;
 ---
 
 <Base
   title={`${doc.data.title} — In Brief`}
   description={`${doc.data.title} in brief: the plain sense of every phrase and what is at stake, with links to the full annotations.`}
+  esHref={esHref}
 >
   <p class="crumbs">
     <a href="/">Doctrine</a> · <a href={`/creeds/${doc.data.slug}`}>{doc.data.title}</a> · In Brief

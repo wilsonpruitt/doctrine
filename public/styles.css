@@ -53,6 +53,13 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 0.9rem;
   color: var(--ink-soft);
 }
+.topnav .navlinks a.lang-switch {
+  margin-left: 1.1rem;
+  padding-left: 1.1rem;
+  border-left: 1px solid var(--ink-faint, currentColor);
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+}
 
 main.prose {
   max-width: 38rem;

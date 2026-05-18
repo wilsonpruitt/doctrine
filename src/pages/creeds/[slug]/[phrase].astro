@@ -40,12 +40,24 @@ const contestedLabel: Record<typeof f.contested, string> = {
   medium: 'moderately contested',
   low: 'well-settled',
 };
+
+const esAnnotation = await getCollection(
+  'annotations',
+  (a) =>
+    a.data.lang === 'es' &&
+    a.data.document === f.document &&
+    a.data.phrase_slug === f.phrase_slug,
+);
+const esHref = esAnnotation.length
+  ? `/es/creeds/${doc.data.slug}/${f.phrase_slug}`
+  : undefined;
 ---
 
 <Base
   title={`${f.phrase_display} — ${doc.data.title}`}
   description={`Annotation on "${f.phrase_display}" in ${doc.data.title}.`}
   wide
+  esHref={esHref}
 >
   <div class="annotation-layout">
     <article class="annotation-main">

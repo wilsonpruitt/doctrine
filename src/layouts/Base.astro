@@ -7,6 +7,10 @@ interface Props {
   wide?: boolean;
   locale?: Locale;
   translationStatus?: 'source' | 'machine-draft' | 'native-reviewed';
+  // On an English page: the Spanish counterpart to link to. Routes pass the
+  // exact translated URL when it exists; omitted → falls back to the Spanish
+  // home so the switcher never 404s on an untranslated page.
+  esHref?: string;
 }
 const {
   title,
@@ -14,12 +18,23 @@ const {
   wide = false,
   locale = 'en',
   translationStatus = 'source',
+  esHref,
 } = Astro.props;
 const isTranslation = locale !== 'en';
 const ui = UI[locale] ?? UI.en;
 const base = locale === 'en' ? '' : `/${locale}`;
 const homeHref = base || '/';
 const aboutHref = `${base}/about`;
+
+// Language switcher. English is the complete superset, so on a translated
+// page the English counterpart is always the same path minus the locale
+// prefix. On an English page we link to the route-supplied Spanish URL, or
+// the Spanish home if this page has no translation yet.
+const switchHref = isTranslation
+  ? Astro.url.pathname.slice(`/${locale}`.length) || '/'
+  : esHref ?? '/es/';
+const switchLabel = isTranslation ? 'English' : 'Español';
+const switchHrefLang = isTranslation ? 'en' : 'es';
 ---
 
 <html lang={locale}>
@@ -37,6 +52,7 @@ const aboutHref = `${base}/about`;
       <span class="navlinks">
         <a href={homeHref}>{ui.navCreeds}</a>
         <a href={aboutHref}>{ui.navAbout}</a>
+        <a class="lang-switch" href={switchHref} hreflang={switchHrefLang} lang={switchHrefLang}>{switchLabel}</a>
       </span>
     </nav>
     {isTranslation && (
