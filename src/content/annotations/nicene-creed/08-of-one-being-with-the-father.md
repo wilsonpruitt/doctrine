@@ -48,6 +48,12 @@ related:
   - nicene-creed/god-from-god-light-from-light
   - nicene-creed/through-him-all-things-were-made
 
+abstract:
+  gloss: "The Son is not merely like God, or close to God, or the highest thing God made. He is, with the Father, the one same God — one being, not two of a kind."
+  stake: "Everything. If the Son is anything less than fully God, a creature is trying to do what only God can do, and the gospel cannot deliver what it promises. The whole fight came down to one Greek letter."
+  matters: "The One who meets you in Jesus is God himself, not God's deputy. Your worship of Christ is not idolatry; your hope rests on God, not on a very good creature standing in for him."
+  wesleyan: "Wesley confessed it without reserve — the Son 'very and eternal God' (Articles I–II). It is also why assurance is trustworthy: the Spirit who witnesses to you is God, so the witness is God's own, not a passing feeling."
+
 contested: high
 last_updated: 2026-05-14
 ---

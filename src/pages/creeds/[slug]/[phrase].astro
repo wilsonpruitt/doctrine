@@ -55,6 +55,21 @@ const contestedLabel: Record<typeof f.contested, string> = {
         <span class={`contested-pill c-${f.contested}`}>{contestedLabel[f.contested]}</span>
       </p>
 
+      {f.abstract && (
+        <section class="abstract" aria-label="In brief">
+          <p class="abstract-label">What it says</p>
+          <p class="gloss">{`“`}{f.abstract.gloss}{`”`}</p>
+          <dl class="beats">
+            <dt>The stake</dt>
+            <dd>{f.abstract.stake}</dd>
+            <dt>Why it matters</dt>
+            <dd>{f.abstract.matters}</dd>
+            <dt>The Wesleyan take</dt>
+            <dd>{f.abstract.wesleyan}</dd>
+          </dl>
+        </section>
+      )}
+
       {(f.latin || f.greek || f.original_english) && (
         <dl class="source-block">
           {f.latin && (

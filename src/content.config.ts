@@ -138,6 +138,23 @@ const annotations = defineCollection({
 
     related: z.array(z.string()).default([]),
 
+    // --- Lay-reader abstract -----------------------------------------------
+    //
+    // Optional "What it says" on-ramp rendered above the scholarly body.
+    // Hand-written per annotation in a plainer, pastoral register: a one-line
+    // plain-language gloss of the phrase, then three short beats. Optional so
+    // the build never breaks on un-backfilled entries; the renderer skips it
+    // cleanly when absent.
+
+    abstract: z
+      .object({
+        gloss: z.string(),    // one sentence: what the phrase means, plainly
+        stake: z.string(),    // what is at stake here
+        matters: z.string(),  // why it matters pastorally
+        wesleyan: z.string(), // the Wesleyan take, in brief
+      })
+      .optional(),
+
     // --- Editorial metadata ------------------------------------------------
 
     contested: contestedEnum,

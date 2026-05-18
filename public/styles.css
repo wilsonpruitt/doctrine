@@ -606,3 +606,48 @@ h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
   border-radius: 999px;
   margin-left: auto;
 }
+
+/* Lay-reader abstract — the "What it says" on-ramp above the scholarly body.
+   Rendered as the primary lead (no tint box), so the scholarly source-block
+   below reads as secondary. See CONTRIBUTING / the doctrine memory. */
+.abstract {
+  margin: 0 0 1.75rem;
+  padding: 0 0 1.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.abstract-label {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.55rem;
+}
+.abstract .gloss {
+  font-family: var(--serif);
+  font-size: 1.32rem;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0 0 1.1rem;
+}
+.abstract .beats {
+  margin: 0;
+}
+.abstract .beats dt {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0.7rem 0 0;
+}
+.abstract .beats dt:first-child {
+  margin-top: 0;
+}
+.abstract .beats dd {
+  margin: 0.15rem 0 0;
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}

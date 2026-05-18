@@ -40,6 +40,12 @@ related:
   - apostles-creed/the-third-day-he-rose-again
   - nicene-creed/he-suffered-death-and-was-buried
 
+abstract:
+  gloss: "Jesus was really, bodily dead — dead enough to need burying. The grave is the creed's proof that the death was not a faint, a symbol, or an appearance."
+  stake: "Whether Good Friday was a real death. No buried body, no empty tomb — Easter depends on a corpse that was actually in a grave."
+  matters: "It puts God in the one place we are most afraid of. Wherever your dead are buried, the One you trust has been buried too; the graveside is not territory God has never entered."
+  wesleyan: "Wesley kept the clause and the comfort it carries: the buried Christ is why a Christian funeral can grieve honestly and still hope — the grave is not the end of the story, because he was once inside one."
+
 contested: low
 last_updated: 2026-05-14
 ---

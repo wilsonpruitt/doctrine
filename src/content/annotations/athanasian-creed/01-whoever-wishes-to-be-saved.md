@@ -42,6 +42,12 @@ related:
   - nicene-creed/one-holy-catholic-and-apostolic-church
   - nicene-creed/proceeds-from-the-father
 
+abstract:
+  gloss: "The creed opens by raising the stakes as high as they go: hold the whole catholic faith, undamaged, or be lost. This is the famous, fierce warning that frames everything that follows."
+  stake: "Two things at once: whether the Christian faith has non-negotiable content — and whether the church may pronounce, by formula, who is going to be lost."
+  matters: "Turned inward, it asks the question a comfortable church most avoids: do we actually believe anything in particular, firmly enough that it would cost us? A faith arranged to risk nothing also means nothing."
+  wesleyan: "This clause is why Wesley struck the entire creed from American Methodism in 1784. He kept every doctrine it teaches (Articles I–IV) but would not damn anyone by recited formula. The empty seat where this creed would sit is itself a Methodist confession."
+
 contested: high
 last_updated: 2026-05-18
 ---
