@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 
-const liveDocs = await getCollection('documents', (d) => !d.data.draft);
+const liveDocs = await getCollection('documents', (d) => !d.data.draft && d.data.lang === 'en');
 const docMap = new Map(liveDocs.map((d) => [d.data.slug, d]));
 
 // Editorial order. Slugs that don't yet have a documents/<slug>.md file render

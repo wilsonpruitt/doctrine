@@ -3,11 +3,20 @@ interface Props {
   title: string;
   description?: string;
   wide?: boolean;
+  locale?: string;
+  translationStatus?: 'source' | 'machine-draft' | 'native-reviewed';
 }
-const { title, description, wide = false } = Astro.props;
+const {
+  title,
+  description,
+  wide = false,
+  locale = 'en',
+  translationStatus = 'source',
+} = Astro.props;
+const isTranslation = locale !== 'en';
 ---
 
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -24,6 +33,13 @@ const { title, description, wide = false } = Astro.props;
         <a href="/about">About</a>
       </span>
     </nav>
+    {isTranslation && (
+      <p class={`xl-banner${translationStatus === 'native-reviewed' ? ' reviewed' : ''}`}>
+        {translationStatus === 'native-reviewed'
+          ? 'Translation reviewed by a native speaker. The English remains the authoritative text.'
+          : 'Machine-assisted translation, pending review by a native speaker. The English is the authoritative text.'}
+      </p>
+    )}
     <main class={wide ? 'wide' : 'prose'}>
       <slot />
     </main>

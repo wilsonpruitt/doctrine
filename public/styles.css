@@ -743,3 +743,18 @@ h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
   font-size: 0.9rem;
 }
 .brief-cta a { color: var(--accent); }
+
+/* Translation provenance banner (non-English pages) */
+.xl-banner {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  background: var(--paper-tint);
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+  padding: 0.6rem 1.25rem;
+  text-align: center;
+}
+.xl-banner.reviewed {
+  color: var(--ink-faint);
+}

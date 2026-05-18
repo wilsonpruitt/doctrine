@@ -3,13 +3,13 @@ import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 
 export async function getStaticPaths() {
-  const docs = await getCollection('documents', (d) => d.data.family === 'ecumenical' && !d.data.draft);
+  const docs = await getCollection('documents', (d) => d.data.family === 'ecumenical' && !d.data.draft && d.data.lang === 'en');
   return docs.map((doc) => ({ params: { slug: doc.data.slug }, props: { doc } }));
 }
 
 const { doc } = Astro.props;
 const annotations = (
-  await getCollection('annotations', (a) => a.data.document === doc.data.slug && !a.data.draft)
+  await getCollection('annotations', (a) => a.data.document === doc.data.slug && !a.data.draft && a.data.lang === 'en')
 ).sort((a, b) => a.data.order - b.data.order);
 
 const SECTION_LABELS: Record<string, string> = {

@@ -79,9 +79,28 @@ const documentEnum = z.enum([
 //
 // The body of the file is the prose; the frontmatter below is structured.
 
+// Localization. English is the source; es/fr/pt/sw are translations.
+// `lang` defaults to 'en' so every existing source file validates untouched.
+const langEnum = z.enum(['en', 'es', 'fr', 'pt', 'sw']);
+// Provenance of a translated file. Source English is 'source'.
+// Machine drafts are flagged until a native speaker reviews them.
+const translationStatusEnum = z.enum([
+  'source',
+  'machine-draft',
+  'native-reviewed',
+]);
+
 const annotations = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/annotations' }),
   schema: z.object({
+
+    // --- Localization -------------------------------------------------------
+    lang: langEnum.default('en'),
+    translation_status: translationStatusEnum.default('source'),
+    // True when the creed/document text or apparatus could not be verified
+    // against an official received translation and needs a native reviewer.
+    needs_native_review: z.boolean().default(false),
+
 
     // --- Identity -----------------------------------------------------------
 
@@ -174,9 +193,12 @@ const annotations = defineCollection({
 //   content/documents/<document-slug>.md
 
 const documents = defineCollection({
-  loader: glob({ pattern: '*.{md,mdx}', base: './src/content/documents' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/documents' }),
   schema: z.object({
     slug: documentEnum,
+    lang: langEnum.default('en'),
+    translation_status: translationStatusEnum.default('source'),
+    needs_native_review: z.boolean().default(false),
     title: z.string(),                    // "The Apostles' Creed"
     subtitle: z.string().optional(),      // "Symbolum Apostolorum"
     date: z.string(),                     // free-form, e.g. "Old Roman Symbol c. 215; Textus Receptus c. 750"
