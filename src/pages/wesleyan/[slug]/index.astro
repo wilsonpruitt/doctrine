@@ -11,6 +11,39 @@ const { doc } = Astro.props;
 const annotations = (
   await getCollection('annotations', (a) => a.data.document === doc.data.slug && !a.data.draft)
 ).sort((a, b) => a.data.order - b.data.order);
+
+const SECTION_LABELS: Record<string, string> = {
+  'first-article': 'First Article',
+  'second-article': 'Second Article',
+  'third-article': 'Third Article',
+  'the-trinity': 'The Trinity',
+  'the-incarnation': 'The Incarnation',
+  'warning-clauses': 'The Warning Clauses',
+  preamble: 'The Preamble',
+  'the-one-condition': 'The One Condition',
+  'first-rule': 'The First Rule — Do No Harm',
+  'second-rule': 'The Second Rule — Do Good',
+  'third-rule': 'The Third Rule — The Ordinances of God',
+  closing: 'The Closing',
+};
+function sectionLabel(slug?: string): string | null {
+  if (!slug) return null;
+  return (
+    SECTION_LABELS[slug] ??
+    slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+  );
+}
+
+type Group = { label: string | null; items: typeof annotations };
+const groups: Group[] = [];
+let lastSection: string | undefined = ' ';
+for (const a of annotations) {
+  if (a.data.section !== lastSection) {
+    groups.push({ label: sectionLabel(a.data.section), items: [] });
+    lastSection = a.data.section;
+  }
+  groups[groups.length - 1].items.push(a);
+}
 ---
 
 <Base
@@ -25,14 +58,17 @@ const annotations = (
   <p>{doc.data.summary}</p>
 
   <div class="spine">
-    {annotations.map((a, i) => (
-      <>
-        <a
-          class={`phrase c-${a.data.contested}`}
-          href={`/wesleyan/${doc.data.slug}/${a.data.phrase_slug}`}
-          title={`${a.data.contested} contested`}
-        >{a.data.phrase_display}</a>{i < annotations.length - 1 ? ' ' : ''}
-      </>
+    {groups.map((g) => (
+      <div class="spine-group">
+        {g.label && <p class="spine-section-label">{g.label}</p>}
+        {g.items.map((a) => (
+          <a
+            class={`phrase c-${a.data.contested}`}
+            href={`/wesleyan/${doc.data.slug}/${a.data.phrase_slug}`}
+            title={`${a.data.contested} contested`}
+          >{a.data.phrase_display}</a>
+        ))}
+      </div>
     ))}
   </div>
 
