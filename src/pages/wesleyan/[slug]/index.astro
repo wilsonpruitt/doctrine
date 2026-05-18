@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('documents', (d) => d.data.family === 'wesleyan' && !d.data.draft);
+  return docs.map((doc) => ({ params: { slug: doc.data.slug }, props: { doc } }));
+}
+
+const { doc } = Astro.props;
+const annotations = (
+  await getCollection('annotations', (a) => a.data.document === doc.data.slug && !a.data.draft)
+).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base
+  title={`${doc.data.title} — Doctrine`}
+  description={doc.data.summary}
+>
+  <p class="crumbs"><a href="/">Doctrine</a> · Wesleyan Tradition</p>
+  <h1>{doc.data.title}</h1>
+  {doc.data.subtitle && <p class="lede">{doc.data.subtitle}</p>}
+  <p class="spine-meta">{doc.data.date}</p>
+
+  <p>{doc.data.summary}</p>
+
+  <div class="spine">
+    {annotations.map((a, i) => (
+      <>
+        <a
+          class={`phrase c-${a.data.contested}`}
+          href={`/wesleyan/${doc.data.slug}/${a.data.phrase_slug}`}
+          title={`${a.data.contested} contested`}
+        >{a.data.phrase_display}</a>{i < annotations.length - 1 ? ' ' : ''}
+      </>
+    ))}
+  </div>
+
+  <p class="spine-legend">
+    Visual weight reflects how contested the phrase is across the tradition:
+    <span class="swatch c-high">highly contested</span>
+    <span class="swatch c-medium">moderately contested</span>
+    <span class="swatch c-low">well-settled</span>
+  </p>
+</Base>

@@ -3,34 +3,43 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 
 export async function getStaticPaths() {
-  const docs = await getCollection('documents', (d) => d.data.family === 'ecumenical');
-  const ecumenicalSlugs = new Set(docs.map((d) => d.data.slug));
+  const docs = await getCollection('documents', (d) => d.data.family === 'wesleyan');
+  const wesleyanSlugs = new Set(docs.map((d) => d.data.slug));
   const annotations = await getCollection(
     'annotations',
-    (a) => !a.data.draft && ecumenicalSlugs.has(a.data.document),
+    (a) => !a.data.draft && wesleyanSlugs.has(a.data.document),
   );
-  return annotations
-    .map((a) => {
-      const siblings = annotations
-        .filter((b) => b.data.document === a.data.document)
-        .sort((x, y) => x.data.order - y.data.order);
-      const idx = siblings.findIndex((b) => b.data.phrase_slug === a.data.phrase_slug);
-      return {
-        params: { slug: a.data.document, phrase: a.data.phrase_slug },
-        props: {
-          annotation: a,
-          doc: docs.find((d) => d.data.slug === a.data.document)!,
-          siblings,
-          prev: idx > 0 ? siblings[idx - 1] : null,
-          next: idx < siblings.length - 1 ? siblings[idx + 1] : null,
-        },
-      };
-    });
+  return annotations.map((a) => {
+    const siblings = annotations
+      .filter((b) => b.data.document === a.data.document)
+      .sort((x, y) => x.data.order - y.data.order);
+    const idx = siblings.findIndex((b) => b.data.phrase_slug === a.data.phrase_slug);
+    return {
+      params: { slug: a.data.document, phrase: a.data.phrase_slug },
+      props: {
+        annotation: a,
+        doc: docs.find((d) => d.data.slug === a.data.document)!,
+        siblings,
+        prev: idx > 0 ? siblings[idx - 1] : null,
+        next: idx < siblings.length - 1 ? siblings[idx + 1] : null,
+      },
+    };
+  });
 }
 
 const { annotation, doc, siblings, prev, next } = Astro.props;
 const { Content, headings } = await render(annotation);
 const f = annotation.data;
+
+// Resolve a related ref's URL prefix by the *target* document's family, so a
+// General Rules annotation can cross-reference an ecumenical creed correctly.
+const allDocs = await getCollection('documents');
+const familyOf = new Map(allDocs.map((d) => [d.data.slug, d.data.family]));
+function hrefFor(docSlug: string, phraseSlug: string) {
+  const fam = familyOf.get(docSlug);
+  const base = fam === 'wesleyan' ? 'wesleyan' : 'creeds';
+  return `/${base}/${docSlug}/${phraseSlug}`;
+}
 
 // Only h2/h3 — h1 is the phrase title rendered above the body
 const navHeadings = headings.filter((h) => h.depth === 2);
@@ -50,7 +59,7 @@ const contestedLabel: Record<typeof f.contested, string> = {
   <div class="annotation-layout">
     <article class="annotation-main">
       <p class="crumbs">
-        <a href="/">Doctrine</a> · <a href={`/creeds/${doc.data.slug}`}>{doc.data.title}</a>
+        <a href="/">Doctrine</a> · <a href={`/wesleyan/${doc.data.slug}`}>{doc.data.title}</a>
       </p>
       <h1>{f.phrase_display}</h1>
 
@@ -152,7 +161,7 @@ const contestedLabel: Record<typeof f.contested, string> = {
               const [docSlug, phraseSlug] = r.split('/');
               return (
                 <li>
-                  <a href={`/creeds/${docSlug}/${phraseSlug}`}>
+                  <a href={hrefFor(docSlug, phraseSlug)}>
                     {docSlug} — {phraseSlug.replace(/-/g, ' ')}
                   </a>
                 </li>
@@ -165,7 +174,7 @@ const contestedLabel: Record<typeof f.contested, string> = {
       <nav class="prev-next" aria-label="Adjacent phrases">
         <div class="prev-next-cell prev-cell">
           {prev && (
-            <a href={`/creeds/${doc.data.slug}/${prev.data.phrase_slug}`}>
+            <a href={`/wesleyan/${doc.data.slug}/${prev.data.phrase_slug}`}>
               <span class="arrow">←</span>
               <span class="label">Previous</span>
               <span class="phrase">{prev.data.phrase_display}</span>
@@ -174,7 +183,7 @@ const contestedLabel: Record<typeof f.contested, string> = {
         </div>
         <div class="prev-next-cell next-cell">
           {next && (
-            <a href={`/creeds/${doc.data.slug}/${next.data.phrase_slug}`}>
+            <a href={`/wesleyan/${doc.data.slug}/${next.data.phrase_slug}`}>
               <span class="label">Next</span>
               <span class="phrase">{next.data.phrase_display}</span>
               <span class="arrow">→</span>
@@ -193,13 +202,13 @@ const contestedLabel: Record<typeof f.contested, string> = {
           ))}
         </ol>
         <p class="toc-foot">
-          <a href={`/creeds/${doc.data.slug}`}>← Back to spine</a>
+          <a href={`/wesleyan/${doc.data.slug}`}>← Back to spine</a>
         </p>
       </aside>
     )}
   </div>
 
-  <section class="inline-creed" aria-label="The full creed">
+  <section class="inline-creed" aria-label="The full document">
     <p class="inline-creed-label">{doc.data.title}</p>
     <p class="inline-creed-text">
       {siblings.map((s, i) => (
@@ -209,7 +218,7 @@ const contestedLabel: Record<typeof f.contested, string> = {
           ) : (
             <a
               class={`phrase c-${s.data.contested}`}
-              href={`/creeds/${doc.data.slug}/${s.data.phrase_slug}`}
+              href={`/wesleyan/${doc.data.slug}/${s.data.phrase_slug}`}
             >{s.data.phrase_display}</a>
           )}{i < siblings.length - 1 ? ' ' : ''}
         </>
