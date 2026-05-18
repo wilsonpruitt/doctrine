@@ -54,39 +54,45 @@ for (const a of annotations) {
 ---
 
 <Base
-  title={`${doc.data.title} — Doctrine`}
-  description={doc.data.summary}
+  title={`${doc.data.title} — In Brief`}
+  description={`${doc.data.title} in brief: the plain sense of every phrase and what is at stake, with links to the full annotations.`}
 >
-  <p class="crumbs"><a href="/">Doctrine</a> · Wesleyan Tradition</p>
-  <h1>{doc.data.title}</h1>
+  <p class="crumbs">
+    <a href="/">Doctrine</a> · <a href={`/wesleyan/${doc.data.slug}`}>{doc.data.title}</a> · In Brief
+  </p>
+  <h1>{doc.data.title} — In Brief</h1>
   {doc.data.subtitle && <p class="lede">{doc.data.subtitle}</p>}
-  <p class="spine-meta">{doc.data.date}</p>
-
-  <p>{doc.data.summary}</p>
-
-  <p class="brief-cta">
-    <a href={`/wesleyan/${doc.data.slug}/brief`}>In brief — every phrase, the quick answer →</a>
+  <p class="brief-intro">
+    The plain sense of every phrase and what is at stake — for those who
+    want the quick answer. Each entry links to the full annotation, where
+    the same phrase is treated at length.
+    <a href={`/wesleyan/${doc.data.slug}`}>See the full document →</a>
   </p>
 
-  <div class="spine">
-    {groups.map((g) => (
-      <div class="spine-group">
-        {g.label && <p class="spine-section-label">{g.label}</p>}
-        {g.items.map((a) => (
-          <a
-            class={`phrase c-${a.data.contested}`}
-            href={`/wesleyan/${doc.data.slug}/${a.data.phrase_slug}`}
-            title={`${a.data.contested} contested`}
-          >{a.data.phrase_display}</a>
-        ))}
-      </div>
-    ))}
-  </div>
-
-  <p class="spine-legend">
-    Visual weight reflects how contested the phrase is across the tradition:
-    <span class="swatch c-high">highly contested</span>
-    <span class="swatch c-medium">moderately contested</span>
-    <span class="swatch c-low">well-settled</span>
-  </p>
+  {groups.map((g) => (
+    <section class="brief-group">
+      {g.label && <p class="spine-section-label">{g.label}</p>}
+      {g.items.map((a) => (
+        <article class="brief-entry">
+          <p class="brief-phrase">{a.data.phrase_display}</p>
+          {a.data.abstract && (
+            <div class="abstract brief-abstract" aria-label="In brief">
+              <p class="gloss">{`“`}{a.data.abstract.gloss}{`”`}</p>
+              <dl class="beats">
+                <dt>The stake</dt>
+                <dd>{a.data.abstract.stake}</dd>
+                <dt>Why it matters</dt>
+                <dd>{a.data.abstract.matters}</dd>
+                <dt>The Wesleyan take</dt>
+                <dd>{a.data.abstract.wesleyan}</dd>
+              </dl>
+            </div>
+          )}
+          <p class="brief-link">
+            <a href={`/wesleyan/${doc.data.slug}/${a.data.phrase_slug}`}>Read the full annotation →</a>
+          </p>
+        </article>
+      ))}
+    </section>
+  ))}
 </Base>

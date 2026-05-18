@@ -684,3 +684,62 @@ h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
   color: var(--ink-soft);
   line-height: 1.6;
 }
+
+/* In Brief (quick) page */
+.brief-intro {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+.brief-intro a {
+  color: var(--accent);
+  white-space: nowrap;
+}
+.brief-group {
+  margin: 0 0 2.25rem;
+}
+.brief-entry {
+  margin: 0 0 1.75rem;
+  padding: 0 0 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.brief-entry:last-child {
+  border-bottom: none;
+}
+.brief-phrase {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 0.85rem;
+  font-style: italic;
+}
+.brief-abstract {
+  margin: 0 0 0.6rem;
+}
+.brief-link {
+  margin: 0;
+}
+.brief-link a {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+}
+.brief-link a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.brief-cta {
+  margin: 1.25rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+.brief-cta a { color: var(--accent); }
