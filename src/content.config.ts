@@ -91,7 +91,13 @@ const translationStatusEnum = z.enum([
 ]);
 
 const annotations = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/annotations' }),
+  loader: glob({
+    pattern: '**/*.{md,mdx}',
+    base: './src/content/annotations',
+    // Include the locale subdirectory in the id so es/… never collides
+    // with the English entry of the same filename.
+    generateId: ({ entry }) => entry.replace(/\.[^.]+$/, ''),
+  }),
   schema: z.object({
 
     // --- Localization -------------------------------------------------------
@@ -193,7 +199,13 @@ const annotations = defineCollection({
 //   content/documents/<document-slug>.md
 
 const documents = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/documents' }),
+  loader: glob({
+    pattern: '**/*.{md,mdx}',
+    base: './src/content/documents',
+    // Include the locale subdirectory in the id so es/apostles-creed.md
+    // does not overwrite the English apostles-creed.md.
+    generateId: ({ entry }) => entry.replace(/\.[^.]+$/, ''),
+  }),
   schema: z.object({
     slug: documentEnum,
     lang: langEnum.default('en'),

@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import { UI, type Locale } from '../../i18n/ui';
+import { PAGES } from '../../i18n/pages';
+
+export async function getStaticPaths() {
+  return (Object.keys(PAGES) as Locale[]).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Locale;
+const ui = UI[lang] ?? UI.en;
+const a = PAGES[lang]!.about;
+---
+
+<Base
+  title={`${a.title} — Doctrine`}
+  description={a.metaDescription}
+  locale={lang}
+  translationStatus="machine-draft"
+>
+  <p class="crumbs"><a href={`/${lang}`}>{ui.crumbDoctrine}</a> · {ui.crumbAbout}</p>
+  <h1>{a.title}</h1>
+  <p class="lede">{a.lede}</p>
+
+  {a.paras.map((p) => <p set:html={p} />)}
+
+  <h2>{a.howMadeHead}</h2>
+  {a.howMadeParas.map((p) => <p set:html={p} />)}
+
+  <h2>{a.howReadHead}</h2>
+  <p set:html={a.howReadIntro} />
+
+  <dl class="about-sections">
+    {a.sections.map((s) => (
+      <>
+        <dt>{s.term}</dt>
+        <dd>{s.def}</dd>
+      </>
+    ))}
+  </dl>
+
+  <p>{a.howReadOutro}</p>
+
+  <h2>{a.corpusHead}</h2>
+  <p set:html={a.corpusPara} />
+
+  <p set:html={a.closing} />
+</Base>

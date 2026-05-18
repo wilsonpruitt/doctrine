@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../../layouts/Base.astro';
+import { UI, sectionLabel, TRANSLATED_LOCALES, type Locale } from '../../../../i18n/ui';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of TRANSLATED_LOCALES) {
+    const docs = await getCollection(
+      'documents',
+      (d) => d.data.family === 'wesleyan' && !d.data.draft && d.data.lang === lang,
+    );
+    for (const doc of docs) {
+      paths.push({ params: { lang, slug: doc.data.slug }, props: { doc } });
+    }
+  }
+  return paths;
+}
+
+const { doc } = Astro.props;
+const lang = Astro.params.lang as Locale;
+const ui = UI[lang] ?? UI.en;
+
+const annotations = (
+  await getCollection(
+    'annotations',
+    (a) => a.data.document === doc.data.slug && !a.data.draft && a.data.lang === lang,
+  )
+).sort((a, b) => a.data.order - b.data.order);
+
+type Group = { label: string | null; items: typeof annotations };
+const groups: Group[] = [];
+let lastSection: string | undefined = ' ';
+for (const a of annotations) {
+  if (a.data.section !== lastSection) {
+    groups.push({ label: sectionLabel(lang, a.data.section), items: [] });
+    lastSection = a.data.section;
+  }
+  groups[groups.length - 1].items.push(a);
+}
+---
+
+<Base
+  title={`${doc.data.title} — Doctrine`}
+  description={doc.data.summary}
+  locale={lang}
+  translationStatus={doc.data.translation_status}
+>
+  <p class="crumbs"><a href={`/${lang}`}>{ui.crumbDoctrine}</a> · {ui.crumbWesleyan}</p>
+  <h1>{doc.data.title}</h1>
+  {doc.data.subtitle && <p class="lede">{doc.data.subtitle}</p>}
+  <p class="spine-meta">{doc.data.date}</p>
+
+  <p>{doc.data.summary}</p>
+
+  <p class="brief-cta">
+    <a href={`/${lang}/wesleyan/${doc.data.slug}/brief`}>{ui.briefCta}</a>
+  </p>
+
+  <div class="spine">
+    {groups.map((g) => (
+      <div class="spine-group">
+        {g.label && <p class="spine-section-label">{g.label}</p>}
+        {g.items.map((a) => (
+          <a
+            class={`phrase c-${a.data.contested}`}
+            href={`/${lang}/wesleyan/${doc.data.slug}/${a.data.phrase_slug}`}
+            title={ui.contested[a.data.contested]}
+          >{a.data.phrase_display}</a>
+        ))}
+      </div>
+    ))}
+  </div>
+
+  <p class="spine-legend">
+    {ui.spineLegendLead}
+    <span class="swatch c-high">{ui.contestedSwatch.high}</span>
+    <span class="swatch c-medium">{ui.contestedSwatch.medium}</span>
+    <span class="swatch c-low">{ui.contestedSwatch.low}</span>
+  </p>
+</Base>

@@ -1,0 +1,116 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { UI, type Locale } from '../../i18n/ui';
+import { PAGES } from '../../i18n/pages';
+
+export async function getStaticPaths() {
+  return (Object.keys(PAGES) as Locale[]).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Locale;
+const ui = UI[lang] ?? UI.en;
+const page = PAGES[lang]!.landing;
+
+const liveDocs = await getCollection('documents', (d) => !d.data.draft && d.data.lang === lang);
+const docMap = new Map(liveDocs.map((d) => [d.data.slug, d]));
+
+// Localized fallback stubs, editorial order. Live translated docs overlay these.
+const ecumenical = [
+  { slug: 'apostles-creed',   title: 'El Credo de los Apóstoles', subtitle: 'Symbolum Apostolorum', date: 'Símbolo romano antiguo c. 215; Textus Receptus c. 750', family: 'ecumenical' as const },
+  { slug: 'nicene-creed',     title: 'El Credo Niceno',           subtitle: 'con notas sobre el filioque', date: 'Constantinopolitano, 381', family: 'ecumenical' as const },
+  { slug: 'athanasian-creed', title: 'El Credo Atanasiano',       subtitle: 'Quicunque Vult', date: 'c. 500', family: 'ecumenical' as const },
+];
+const wesleyan = [
+  { slug: 'general-rules',        title: 'Las Reglas Generales de Wesley', subtitle: undefined as string | undefined, date: '1743', family: 'wesleyan' as const },
+  { slug: 'articles-of-religion', title: 'Los Artículos de Religión',      subtitle: 'Abreviación de Wesley (1784) de los Treinta y Nueve Artículos', date: '1784', family: 'wesleyan' as const },
+];
+
+function entryFor(stub: typeof ecumenical[number]) {
+  const live = docMap.get(stub.slug);
+  if (live) {
+    return {
+      ...stub,
+      title: live.data.title,
+      subtitle: live.data.subtitle ?? stub.subtitle,
+      date: live.data.date,
+      summary: live.data.summary,
+      live: true,
+    };
+  }
+  return { ...stub, summary: undefined, live: false };
+}
+const ecumenicalEntries = ecumenical.map(entryFor);
+const wesleyanEntries = wesleyan.map(entryFor);
+---
+
+<Base
+  title="Doctrine — Credos y confesiones"
+  description={page.subtitle}
+  wide
+  locale={lang}
+  translationStatus="machine-draft"
+>
+  <article class="landing">
+    <p class="eyebrow">{page.eyebrow}</p>
+    <h1 class="title">{page.title}</h1>
+    <p class="subtitle">{page.subtitle}</p>
+
+    <p class="intro">
+      {page.intro.lead}
+      <a href="https://difficult-passages.netlify.app">{page.intro.companionLink}</a>.
+    </p>
+
+    <section class="toc-section">
+      <header class="toc-head">
+        <h2>{page.ecumenicalHead}</h2>
+        <span class="rule"></span>
+      </header>
+      <ol class="toc">
+        {ecumenicalEntries.map((e) => (
+          <li class={e.live ? '' : 'pending'}>
+            <div>
+              <div class="entry-head">
+                {e.live ? (
+                  <a class="doc-title" href={`/${lang}/creeds/${e.slug}`}>{e.title}</a>
+                ) : (
+                  <span class="doc-title" style="color: var(--ink-faint);">{e.title}</span>
+                )}
+                {e.subtitle && <span class="doc-subtitle">— {e.subtitle}</span>}
+                {!e.live && <span class="pending-tag">{page.forthcoming}</span>}
+              </div>
+              {e.date && <p class="doc-date">{e.date}</p>}
+              {e.summary && <p class="doc-summary">{e.summary}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="toc-section">
+      <header class="toc-head">
+        <h2>{page.wesleyanHead}</h2>
+        <span class="rule"></span>
+      </header>
+      <ol class="toc">
+        {wesleyanEntries.map((e) => (
+          <li class={e.live ? '' : 'pending'}>
+            <div>
+              <div class="entry-head">
+                {e.live ? (
+                  <a class="doc-title" href={`/${lang}/wesleyan/${e.slug}`}>{e.title}</a>
+                ) : (
+                  <span class="doc-title" style="color: var(--ink-faint);">{e.title}</span>
+                )}
+                {e.subtitle && <span class="doc-subtitle">— {e.subtitle}</span>}
+                {!e.live && <span class="pending-tag">{page.forthcoming}</span>}
+              </div>
+              {e.date && <p class="doc-date">{e.date}</p>}
+              {e.summary && <p class="doc-summary">{e.summary}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  </article>
+</Base>

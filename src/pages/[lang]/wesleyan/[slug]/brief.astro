@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../../layouts/Base.astro';
+import { UI, sectionLabel, TRANSLATED_LOCALES, type Locale } from '../../../../i18n/ui';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of TRANSLATED_LOCALES) {
+    const docs = await getCollection(
+      'documents',
+      (d) => d.data.family === 'wesleyan' && !d.data.draft && d.data.lang === lang,
+    );
+    for (const doc of docs) {
+      paths.push({ params: { lang, slug: doc.data.slug }, props: { doc } });
+    }
+  }
+  return paths;
+}
+
+const { doc } = Astro.props;
+const lang = Astro.params.lang as Locale;
+const ui = UI[lang] ?? UI.en;
+
+const annotations = (
+  await getCollection(
+    'annotations',
+    (a) => a.data.document === doc.data.slug && !a.data.draft && a.data.lang === lang,
+  )
+).sort((a, b) => a.data.order - b.data.order);
+
+type Group = { label: string | null; items: typeof annotations };
+const groups: Group[] = [];
+let lastSection: string | undefined = ' ';
+for (const a of annotations) {
+  if (a.data.section !== lastSection) {
+    groups.push({ label: sectionLabel(lang, a.data.section), items: [] });
+    lastSection = a.data.section;
+  }
+  groups[groups.length - 1].items.push(a);
+}
+---
+
+<Base
+  title={`${doc.data.title} — ${ui.briefTitleSuffix}`}
+  description={`${doc.data.title} — ${ui.briefTitleSuffix}.`}
+  locale={lang}
+  translationStatus={doc.data.translation_status}
+>
+  <p class="crumbs">
+    <a href={`/${lang}`}>{ui.crumbDoctrine}</a> · <a href={`/${lang}/wesleyan/${doc.data.slug}`}>{doc.data.title}</a> · {ui.crumbInBrief}
+  </p>
+  <h1>{doc.data.title} — {ui.briefTitleSuffix}</h1>
+  {doc.data.subtitle && <p class="lede">{doc.data.subtitle}</p>}
+  <p class="brief-intro">
+    {ui.briefIntro}
+    <a href={`/${lang}/wesleyan/${doc.data.slug}`}>{ui.briefSeeFullDocument}</a>
+  </p>
+
+  {groups.map((g) => (
+    <section class="brief-group">
+      {g.label && <p class="spine-section-label">{g.label}</p>}
+      {g.items.map((a) => (
+        <article class="brief-entry">
+          <p class="brief-phrase">{a.data.phrase_display}</p>
+          {a.data.abstract && (
+            <div class="abstract brief-abstract" aria-label={ui.crumbInBrief}>
+              <p class="gloss">{`“`}{a.data.abstract.gloss}{`”`}</p>
+              <dl class="beats">
+                <dt>{ui.abstractStake}</dt>
+                <dd>{a.data.abstract.stake}</dd>
+                <dt>{ui.abstractMatters}</dt>
+                <dd>{a.data.abstract.matters}</dd>
+                <dt>{ui.abstractWesleyan}</dt>
+                <dd>{a.data.abstract.wesleyan}</dd>
+              </dl>
+            </div>
+          )}
+          <p class="brief-link">
+            <a href={`/${lang}/wesleyan/${doc.data.slug}/${a.data.phrase_slug}`}>{ui.briefReadFull}</a>
+          </p>
+        </article>
+      ))}
+    </section>
+  ))}
+</Base>

@@ -1,0 +1,223 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../../layouts/Base.astro';
+import { UI, traditionLabel, TRANSLATED_LOCALES, type Locale } from '../../../../i18n/ui';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of TRANSLATED_LOCALES) {
+    const docs = await getCollection(
+      'documents',
+      (d) => d.data.family === 'ecumenical' && d.data.lang === lang,
+    );
+    const ecumenicalSlugs = new Set(docs.map((d) => d.data.slug));
+    const annotations = await getCollection(
+      'annotations',
+      (a) => !a.data.draft && a.data.lang === lang && ecumenicalSlugs.has(a.data.document),
+    );
+    for (const a of annotations) {
+      const siblings = annotations
+        .filter((b) => b.data.document === a.data.document)
+        .sort((x, y) => x.data.order - y.data.order);
+      const idx = siblings.findIndex((b) => b.data.phrase_slug === a.data.phrase_slug);
+      paths.push({
+        params: { lang, slug: a.data.document, phrase: a.data.phrase_slug },
+        props: {
+          annotation: a,
+          doc: docs.find((d) => d.data.slug === a.data.document)!,
+          siblings,
+          prev: idx > 0 ? siblings[idx - 1] : null,
+          next: idx < siblings.length - 1 ? siblings[idx + 1] : null,
+        },
+      });
+    }
+  }
+  return paths;
+}
+
+const { annotation, doc, siblings, prev, next } = Astro.props;
+const lang = Astro.params.lang as Locale;
+const ui = UI[lang] ?? UI.en;
+const { Content, headings } = await render(annotation);
+const f = annotation.data;
+
+const navHeadings = headings.filter((h) => h.depth === 2);
+---
+
+<Base
+  title={`${f.phrase_display} — ${doc.data.title}`}
+  description={`${doc.data.title}: ${f.phrase_display}.`}
+  wide
+  locale={lang}
+  translationStatus={f.translation_status}
+>
+  <div class="annotation-layout">
+    <article class="annotation-main">
+      <p class="crumbs">
+        <a href={`/${lang}`}>{ui.crumbDoctrine}</a> · <a href={`/${lang}/creeds/${doc.data.slug}`}>{doc.data.title}</a>
+      </p>
+      <h1>{f.phrase_display}</h1>
+
+      <p class="contested-line">
+        <span class={`contested-pill c-${f.contested}`}>{ui.contested[f.contested]}</span>
+      </p>
+
+      {f.abstract && (
+        <section class="abstract" aria-label={ui.abstractLabel}>
+          <p class="abstract-label">{ui.abstractLabel}</p>
+          <p class="gloss">{`“`}{f.abstract.gloss}{`”`}</p>
+          <dl class="beats">
+            <dt>{ui.abstractStake}</dt>
+            <dd>{f.abstract.stake}</dd>
+            <dt>{ui.abstractMatters}</dt>
+            <dd>{f.abstract.matters}</dd>
+            <dt>{ui.abstractWesleyan}</dt>
+            <dd>{f.abstract.wesleyan}</dd>
+          </dl>
+        </section>
+      )}
+
+      {(f.latin || f.greek || f.original_english) && (
+        <dl class="source-block">
+          {f.latin && (
+            <>
+              <dt>{ui.srcLatin}</dt>
+              <dd>
+                <em>{f.latin}</em>
+                {f.latin_note && <span class="note">{f.latin_note}</span>}
+                {f.latin_variants && f.latin_variants.map((v) => (
+                  <span class="note">{ui.srcVariant}: <em>{v.text}</em>{v.note ? ` — ${v.note}` : ''}</span>
+                ))}
+              </dd>
+            </>
+          )}
+          {f.greek && (
+            <>
+              <dt>{ui.srcGreek}</dt>
+              <dd>
+                <em>{f.greek}</em>
+                {f.greek_note && <span class="note">{f.greek_note}</span>}
+                {f.greek_variants && f.greek_variants.map((v) => (
+                  <span class="note">{ui.srcVariant}: <em>{v.text}</em>{v.note ? ` — ${v.note}` : ''}</span>
+                ))}
+              </dd>
+            </>
+          )}
+          {f.original_english && (
+            <>
+              <dt>{ui.srcOriginalEnglish}</dt>
+              <dd>
+                <em>{f.original_english}</em>
+                {f.original_english_note && <span class="note">{f.original_english_note}</span>}
+              </dd>
+            </>
+          )}
+        </dl>
+      )}
+
+      <table class="translations">
+        <thead>
+          <tr><th>{ui.tableVersion}</th><th>{ui.tableRendering}</th></tr>
+        </thead>
+        <tbody>
+          {f.translations.map((t) => (
+            <tr>
+              <th scope="row">{t.version}</th>
+              <td>
+                {t.text}
+                {t.note && <span class="note">{t.note}</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {f.traditions.length > 0 && (
+        <p class="traditions-line">
+          <span class="meta-label">{ui.traditionsCited}</span>
+          {f.traditions.map((t, i) => (
+            <>
+              {i > 0 && <span class="dot">·</span>}
+              <span class="tradition">{traditionLabel(lang, t)}</span>
+            </>
+          ))}
+        </p>
+      )}
+
+      <div class="annotation-body">
+        <Content />
+      </div>
+
+      {f.related.length > 0 && (
+        <section class="related">
+          <h3>{ui.related}</h3>
+          <ul>
+            {f.related.map((r) => {
+              const [docSlug, phraseSlug] = r.split('/');
+              return (
+                <li>
+                  <a href={`/${lang}/creeds/${docSlug}/${phraseSlug}`}>
+                    {docSlug} — {phraseSlug.replace(/-/g, ' ')}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+
+      <nav class="prev-next" aria-label={ui.tocLabel}>
+        <div class="prev-next-cell prev-cell">
+          {prev && (
+            <a href={`/${lang}/creeds/${doc.data.slug}/${prev.data.phrase_slug}`}>
+              <span class="arrow">←</span>
+              <span class="label">{ui.prev}</span>
+              <span class="phrase">{prev.data.phrase_display}</span>
+            </a>
+          )}
+        </div>
+        <div class="prev-next-cell next-cell">
+          {next && (
+            <a href={`/${lang}/creeds/${doc.data.slug}/${next.data.phrase_slug}`}>
+              <span class="label">{ui.next}</span>
+              <span class="phrase">{next.data.phrase_display}</span>
+              <span class="arrow">→</span>
+            </a>
+          )}
+        </div>
+      </nav>
+    </article>
+
+    {navHeadings.length > 1 && (
+      <aside class="annotation-toc" aria-label={ui.tocLabel}>
+        <p class="toc-label">{ui.tocLabel}</p>
+        <ol>
+          {navHeadings.map((h) => (
+            <li><a href={`#${h.slug}`}>{h.text}</a></li>
+          ))}
+        </ol>
+        <p class="toc-foot">
+          <a href={`/${lang}/creeds/${doc.data.slug}`}>{ui.tocBackToSpine}</a>
+        </p>
+      </aside>
+    )}
+  </div>
+
+  <section class="inline-creed" aria-label={doc.data.title}>
+    <p class="inline-creed-label">{doc.data.title}</p>
+    <p class="inline-creed-text">
+      {siblings.map((s, i) => (
+        <>
+          {s.data.phrase_slug === f.phrase_slug ? (
+            <span class={`phrase c-${s.data.contested} current`}>{s.data.phrase_display}</span>
+          ) : (
+            <a
+              class={`phrase c-${s.data.contested}`}
+              href={`/${lang}/creeds/${doc.data.slug}/${s.data.phrase_slug}`}
+            >{s.data.phrase_display}</a>
+          )}{i < siblings.length - 1 ? ' ' : ''}
+        </>
+      ))}
+    </p>
+  </section>
+</Base>
