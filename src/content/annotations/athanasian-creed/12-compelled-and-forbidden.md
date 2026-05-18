@@ -39,6 +39,12 @@ related:
   - athanasian-creed/the-father-is-god
   - athanasian-creed/the-father-is-lord
 
+abstract:
+  gloss: "Christian truth compels the church to confess each person God and Lord; the catholic rule forbids her to say three Gods. Doctrine is bound on two sides, free in the middle."
+  stake: "What kind of thing a dogma even is — a description, a rule for speech, or both. This verse is the classic text for that question."
+  matters: "It frees the layperson: you are not asked to explain the Trinity, only to confess what is compelled and refuse what is forbidden — and that space is reverence, not ignorance."
+  wesleyan: "This is the anatomy of Wesley's 'the fact, not the manner' — maximal where compelled, silent where forbidden — and the bond of his 'Catholic Spirit.'"
+
 contested: medium
 last_updated: 2026-05-18
 ---

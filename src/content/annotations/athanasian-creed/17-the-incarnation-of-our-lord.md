@@ -39,6 +39,12 @@ related:
   - athanasian-creed/whoever-wishes-to-be-saved
   - nicene-creed/for-us-and-for-our-salvation
 
+abstract:
+  gloss: "It is also necessary, the creed says, to believe rightly the Incarnation — the God of Part I is the Son who became flesh. One faith, not two."
+  stake: "Whether you can keep half the gospel — Jesus without the Trinity, or a vague God without the real enfleshment. The small word 'also' welds them."
+  matters: "It names the two comfortable modern half-faiths and refuses both; subtract either and what remains cannot save."
+  wesleyan: "Wesley struck the creed but kept Chalcedon verbatim (Article II); his whole interest is 'for us' — the God-man as the only sufficient Mediator."
+
 contested: high
 last_updated: 2026-05-18
 ---

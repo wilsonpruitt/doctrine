@@ -46,6 +46,12 @@ related:
   - apostles-creed/suffered-under-pontius-pilate
   - nicene-creed/and-was-incarnate-of-the-holy-spirit-and-the-virgin-mary
 
+abstract:
+  gloss: "This names the human source: born, in the ordinary bodily sense, of a particular woman of Nazareth. A confession about the realness of his humanity."
+  stake: "He did not descend full-grown or merely appear human; he was born — really one of us, with a mother and a birth."
+  matters: "God reached the world through an unremarkable woman's 'yes'; the Incarnation honors the ordinary, the bodily, the said-yes."
+  wesleyan: "Wesley confesses the virgin birth without apology (Article II, among the Methodist Restrictive Rules); Mary chosen because she said yes."
+
 contested: high
 last_updated: 2026-05-14
 ---

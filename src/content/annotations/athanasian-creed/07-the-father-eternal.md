@@ -39,6 +39,12 @@ related:
   - athanasian-creed/such-as-the-father-is
   - nicene-creed/eternally-begotten-of-the-father
 
+abstract:
+  gloss: "Father, Son, and Spirit are eternal — without beginning, without end. The Son was never not; there is no 'before' the Son."
+  stake: "The exact thing Arius denied of the Son ('there was when he was not'). Eternity is God's mode of being, not merely a very long time."
+  matters: "The love that meets you in Christ had no beginning (it is not God's reaction to you) and no end (it cannot be outlived); against the tyranny of the urgent, it gives a life a horizon."
+  wesleyan: "Wesley's sermon 'On Eternity' (54) preaches exactly this — the everlasting God as the soul's dwelling place and the true measure of the soul's own destiny."
+
 contested: medium
 last_updated: 2026-05-18
 ---

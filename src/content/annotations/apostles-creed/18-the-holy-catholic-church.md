@@ -48,6 +48,12 @@ related:
   - apostles-creed/the-communion-of-saints
   - apostles-creed/the-forgiveness-of-sins
 
+abstract:
+  gloss: "The clause Protestants mumble. 'Catholic' means universal — the church of all places and times — not the Roman communion alone."
+  stake: "Whether the church is your local congregation or the whole Spirit-made people across every age; the word has been wrongly narrowed."
+  matters: "You are not a religious individual with opinions; you belong to a people older and wider than your tribe, and that belonging is not optional."
+  wesleyan: "Wesley's ecclesiology is strikingly catholic — 'Catholic Spirit' (Sermon 39); the 'Letter to a Roman Catholic' ('if we cannot think alike, may we not love alike?')."
+
 contested: high
 last_updated: 2026-05-14
 ---

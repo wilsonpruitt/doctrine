@@ -47,6 +47,12 @@ related:
   - nicene-creed/through-him-all-things-were-made
   - nicene-creed/incarnate-of-the-virgin-mary
 
+abstract:
+  gloss: "The hinge of the creed: the eternal Son came down — for us (the reason), for our salvation (the purpose), from heaven (the source)."
+  stake: "The Incarnation has a motive, and the motive is not God's need but ours; 'for us' governs everything that follows."
+  matters: "Whatever else is true of your life, this is: God did not stay at a distance; he came down, on purpose, for you."
+  wesleyan: "Wesley's Notes on John 1:14 — the Word 'pitched his tabernacle in our human nature'; the descent is the warmth at the center of the gospel."
+
 contested: medium
 last_updated: 2026-05-14
 ---

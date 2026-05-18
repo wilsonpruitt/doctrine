@@ -39,6 +39,12 @@ related:
   - athanasian-creed/one-god-in-trinity
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "One person of the Father, another of the Son, another of the Spirit — yet one Godhead, equal in glory, equal in eternity. Distinct, never ranked."
+  stake: "Whether the persons can be told apart without being ranked first, second, third. The creed numbers nothing."
+  matters: "There is no junior member of the Godhead — the Son is not the Father's deputy, the Spirit not his influence; you meet the whole God in each."
+  wesleyan: "'Of one substance, power, and eternity' (Article I) is this verse; Wesley's gospel needs it — the Son who justifies and the Spirit who assures are fully God."
+
 contested: high
 last_updated: 2026-05-18
 ---

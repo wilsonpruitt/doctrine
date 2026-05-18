@@ -39,6 +39,12 @@ related:
   - athanasian-creed/the-father-almighty
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "The Father is God, the Son is God, the Spirit is God — and yet not three Gods but one God. The bare center of the whole faith."
+  stake: "Whether the Christ who meets you is God himself or God's best creature. This is where Christianity stands or falls, and where it meets the Shema head-on."
+  matters: "It defuses the 'you worship three Gods' charge and forbids the respectable modern Arian — Jesus the great teacher, the human face of a vague God."
+  wesleyan: "Here the deleted creed and Methodism fully coincide (Articles I, II, IV); and assurance depends on the Spirit being God, not a passing feeling."
+
 contested: high
 last_updated: 2026-05-18
 ---

@@ -49,6 +49,12 @@ related:
   - nicene-creed/worshipped-and-glorified
   - apostles-creed/i-believe-in-the-holy-spirit
 
+abstract:
+  gloss: "The third article opens: the Holy Spirit is named Lord and giver of life — that is, fully and personally God, not God's impersonal energy."
+  stake: "Whether the Spirit is a divine person to be believed in (like the Father and the Son) or a force; the creed puts him in the same confession."
+  matters: "The One who convicts, regenerates, and assures you is God himself at work in you — so the inner life of faith is not your project but his."
+  wesleyan: "Article IV ('very and eternal God'); the Spirit's personal work — new birth, the witness, sanctification — is the beating heart of Wesleyan theology."
+
 contested: high
 last_updated: 2026-05-14
 ---

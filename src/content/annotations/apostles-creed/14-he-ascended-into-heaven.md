@@ -46,6 +46,12 @@ related:
   - apostles-creed/from-thence-he-shall-come-to-judge
   - apostles-creed/i-believe-in-the-holy-spirit
 
+abstract:
+  gloss: "A real body — the one crucified and risen — went up, into a state and place we cannot now reach. Not a metaphor."
+  stake: "The ascension is bodily; the humanity Christ took did not evaporate but was carried into God's own presence."
+  matters: "A human life like yours is now at the center of reality; the body has a future in heaven, not just a soul."
+  wesleyan: "Wesley confesses it matter-of-factly and bodily (Article III, a Restrictive Rule) — settled Methodist doctrine, not symbol."
+
 contested: high
 last_updated: 2026-05-14
 ---

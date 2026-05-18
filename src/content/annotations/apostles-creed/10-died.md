@@ -47,6 +47,12 @@ related:
   - apostles-creed/descended-into-hell
   - apostles-creed/the-third-day-he-rose-again
 
+abstract:
+  gloss: "One word, the heaviest in the creed. Not apparent death, not a coma, not transcendence — he died. Really."
+  stake: "A real death or no gospel: no descent to make, no third day; nothing rises if nothing died."
+  matters: "The God who made you entered death itself; the last enemy is not a place he avoided but one he has been inside."
+  wesleyan: "Wesley holds the patristic, Anselmian, and Reformed accounts together without choosing among them, and warms them all into personal trust."
+
 contested: high
 last_updated: 2026-05-14
 ---

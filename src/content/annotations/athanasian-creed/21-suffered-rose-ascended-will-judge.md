@@ -39,6 +39,12 @@ related:
   - apostles-creed/descended-into-hell
   - nicene-creed/for-us-and-for-our-salvation
 
+abstract:
+  gloss: "He suffered for our salvation, descended, rose, ascended, will come to judge; and all will rise with their bodies and give account."
+  stake: "Why a creed full of precision suddenly tells the story — because it was all for our salvation. The doctrine is the grammar of the rescue."
+  matters: "'With their bodies' — the hope is not the soul escaping the body but the whole person raised; preach the noun at the graveside."
+  wesleyan: "'For our salvation' is the most Wesleyan phrase here ('died he for me?'); Wesley preached the bodily resurrection (Sermon 137) and a real judgment by the works faith produces."
+
 contested: medium
 last_updated: 2026-05-18
 ---

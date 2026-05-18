@@ -47,6 +47,12 @@ related:
   - nicene-creed/eternally-begotten-of-the-father
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "From the Father, yes — but fully and truly God, not a lesser or borrowed deity. Light from light: radiance from the source, both wholly light."
+  stake: "'From' must not mean 'less than.' The Son is not God by courtesy or by exalted creaturehood; he is true God of true God."
+  matters: "The God you meet in Jesus is not a junior stand-in for a realer, more distant God; what you see in Christ is God, truly, all the way down."
+  wesleyan: "'The very and eternal God' (Article II) names exactly this; Wesley's whole gospel rests on the Son being true God, or grace cannot save."
+
 contested: high
 last_updated: 2026-05-14
 ---

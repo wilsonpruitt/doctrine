@@ -48,6 +48,12 @@ related:
   - nicene-creed/maker-of-heaven-and-earth
   - nicene-creed/eternally-begotten-of-the-father
 
+abstract:
+  gloss: "God is named Father — in eternal relation to the Son, and so to us — and Almighty: his sovereign rule is the rule of that fatherhood."
+  stake: "Whether 'Father' is a metaphor and 'Almighty' raw power, or one truth — a power that is fatherly and a fatherhood that is sovereign."
+  matters: "You call God Father not by religious intuition but by the Spirit of adoption; and his almightiness yields quiet confidence, not anxious mastery."
+  wesleyan: "Wesley's 'Spirit of Bondage and of Adoption' (Sermon 9, Romans 8:15): the cry 'Abba' is the Spirit's gift, and providence orders all things for good."
+
 contested: medium
 last_updated: 2026-05-14
 ---

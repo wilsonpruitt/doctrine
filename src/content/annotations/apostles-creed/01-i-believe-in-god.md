@@ -41,6 +41,12 @@ related:
   - apostles-creed/and-in-jesus-christ
   - apostles-creed/i-believe-in-the-holy-spirit
 
+abstract:
+  gloss: "'I believe' is a transitive act — the heart given to this God, named in the lines that follow — not a statement that one is generally spiritual."
+  stake: "Whether faith is assent to a proposition or the entrusting of a life; the creed is a confession, a speech-act, not a textbook entry."
+  matters: "The modern drift is intransitive ('I'm a believing sort of person'); the creed pulls it back to an object — you believe in someone."
+  wesleyan: "Wesley's Aldersgate — the heart 'strangely warmed' when he trusted, for the first time, that Christ died for him; faith as personal trust, not bare orthodoxy."
+
 contested: medium
 last_updated: 2026-05-14
 ---

@@ -48,6 +48,12 @@ related:
   - apostles-creed/the-holy-catholic-church
   - apostles-creed/the-resurrection-of-the-body
 
+abstract:
+  gloss: "What the Christian receives: the ledger wiped, the debt remitted, the sentence lifted. Concrete, not a vague spiritual mood."
+  stake: "The Bible's doctrine is economic — sin is debt; forgiveness is the debt actually cancelled, not merely a feeling of being okay."
+  matters: "The modern church has spiritualized it into nothing; recovered, it is the most freeing sentence a guilty person can hear."
+  wesleyan: "Wesley holds it with Reformation precision and revivalist energy — Article IX, justification by faith only, the merit of Christ alone."
+
 contested: medium
 last_updated: 2026-05-14
 ---

@@ -39,6 +39,12 @@ related:
   - nicene-creed/of-one-being-with-the-father
   - nicene-creed/incarnate-of-the-virgin-mary
 
+abstract:
+  gloss: "One Christ, God of the Father's substance and man of his mother's, complete God and complete man — including a human mind, not only a body."
+  stake: "'Perfect' means whole, not flawless; and the human rational soul is the clause a council was fought for — a Christ without a human mind cannot heal ours."
+  matters: "He took a human mind, human fear, a human will — so there is no part of your inner life (panic, grief, the dark) he did not enter and cannot heal."
+  wesleyan: "Article II ('two whole and perfect natures'); Wesleyan sanctification of the whole person depends on the whole person being assumed — 'what is not assumed is not healed.'"
+
 contested: high
 last_updated: 2026-05-18
 ---

@@ -47,6 +47,12 @@ related:
   - apostles-creed/i-believe-in-the-holy-spirit
   - nicene-creed/and-was-incarnate-of-the-holy-spirit
 
+abstract:
+  gloss: "This names the agent of the Incarnation — the Holy Spirit. The Son enters not by nature, nor an angel, but by the Third Person overshadowing a young woman."
+  stake: "The whole Trinity is in the Incarnation — the Father sends, the Son is sent, the Spirit conceives; it is God's act, not a process."
+  matters: "Your salvation begins where you had no part — conceived by the Spirit, before you could contribute; grace precedes you bodily."
+  wesleyan: "Wesley confesses it matter-of-factly (Letter to a Roman Catholic; Article II) — note this is Jesus' conception by the Spirit, not Mary's Immaculate Conception."
+
 contested: high
 last_updated: 2026-05-14
 ---

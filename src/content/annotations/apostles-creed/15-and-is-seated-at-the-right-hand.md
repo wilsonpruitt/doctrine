@@ -47,6 +47,12 @@ related:
   - apostles-creed/the-father-almighty
   - apostles-creed/i-believe-in-the-holy-spirit
 
+abstract:
+  gloss: "What Christ is doing now: he sits — present tense — at the Father's right hand, reigning and interceding while the world goes on."
+  stake: "The gospel is not only past; there is a present-tense state of Christ — enthroned, not merely remembered."
+  matters: "While the diagnosis is read and the child is born, a human being reigns at the center of things and prays for you."
+  wesleyan: "The Wesleyan tradition holds the session simply and unfussily, in close continuity with the Anglican formularies (Article III)."
+
 contested: medium
 last_updated: 2026-05-14
 ---

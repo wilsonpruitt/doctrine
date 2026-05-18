@@ -48,6 +48,12 @@ related:
   - nicene-creed/eternally-begotten-of-the-father
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "The eternal Son is the one through whom the Father made everything. One act of creation — the Father's, through the Son, in the Spirit — not two creators."
+  stake: "The Son is not a creature within creation but the agent of it; the Word through whom all that is was spoken into being."
+  matters: "The One who redeems you is the One who made you; salvation is not a stranger's rescue but the Maker reclaiming his own work."
+  wesleyan: "Wesley's Notes on John 1:3 (the Son as instrumental cause of all things); creation and redemption are one work of the one God."
+
 contested: medium
 last_updated: 2026-05-14
 ---

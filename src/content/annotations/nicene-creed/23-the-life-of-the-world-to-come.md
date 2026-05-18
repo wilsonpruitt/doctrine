@@ -48,6 +48,12 @@ related:
   - nicene-creed/i-believe-in-the-holy-spirit
   - apostles-creed/the-life-everlasting
 
+abstract:
+  gloss: "The creed ends not with a doctrine to defend but a life to await — the life of the coming age, the new creation — sealed with one Hebrew word: Amen."
+  stake: "The end is not endless more of the present order but a qualitatively new creation; and the creed closes in assent, not argument."
+  matters: "The Christian hope is not escaping the world but the world made new; the 'Amen' is the church staking her whole life on its being true."
+  wesleyan: "Wesley bends it, as always, toward the practical and affective — the wiped-away tears, the city of God (Notes on Revelation 21–22); hope that changes how you live now."
+
 contested: medium
 last_updated: 2026-05-15
 ---

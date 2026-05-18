@@ -39,6 +39,12 @@ related:
   - athanasian-creed/neither-confounding-nor-dividing
   - athanasian-creed/such-as-the-father-is
 
+abstract:
+  gloss: "You may say the Father is eternal, the Son eternal, the Spirit eternal — but not 'three eternals.' Count the persons; never count the Godhead."
+  stake: "This is where the Trinity stops being addition — the rule that makes 'three persons, one God' not a contradiction."
+  matters: "The answer, in one sentence, to every 'so is it three or one?': three lands on persons, one lands on God — it was never a sum to solve."
+  wesleyan: "Wesley keeps the rule on every page (never 'three Gods') while refusing to make mastering the rule a salvation test — the fact, not the manner."
+
 contested: high
 last_updated: 2026-05-18
 ---

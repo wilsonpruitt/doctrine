@@ -48,6 +48,12 @@ related:
   - nicene-creed/one-baptism-for-the-forgiveness-of-sins
   - apostles-creed/the-holy-catholic-church
 
+abstract:
+  gloss: "The Church is named in the third article because it is the Spirit's creature — one, holy, catholic, apostolic: not a club we form but a people he makes."
+  stake: "Whether the Church is a human voluntary society with a later theology, or what the Spirit creates when he is poured out."
+  matters: "You do not join the Church the way you join an association; you are made part of what the Spirit is doing — the four marks are gift before they are task."
+  wesleyan: "Wesley's ecclesiology is the most ecumenically generous in the magisterial tradition (Article XIII; 'Catholic Spirit') — the one Church is wider than any one society."
+
 contested: high
 last_updated: 2026-05-15
 ---

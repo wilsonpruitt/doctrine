@@ -48,6 +48,12 @@ related:
   - nicene-creed/of-one-being-with-the-father
   - nicene-creed/worshipped-and-glorified
 
+abstract:
+  gloss: "The Spirit proceeds from the Father — and, in the Western text, 'and the Son.' Those three added words are the deepest division in the church's history."
+  stake: "Whether a local church may add to a universal creed, and whether the Son shares in the Spirit's eternal origin — East and West still divide here."
+  matters: "Held rightly, it means the Spirit you receive is the Spirit of Jesus — he will never lead you anywhere other than to Christ."
+  wesleyan: "Wesley took the filioque from the Anglican Articles without controversy (Article IV); his pneumatological energy went to the Spirit's work — the witness, the new birth."
+
 contested: high
 last_updated: 2026-05-15
 ---

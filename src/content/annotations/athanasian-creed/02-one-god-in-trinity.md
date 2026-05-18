@@ -40,6 +40,12 @@ related:
   - nicene-creed/we-believe-in-one-god
   - nicene-creed/the-father-the-almighty
 
+abstract:
+  gloss: "The catholic faith, the creed says, is to worship one God who is three and three who are one — not to solve the Trinity but to adore it."
+  stake: "Whether the doctrine is a puzzle to crack or the grammar of how Christians actually pray. The verb here is 'worship,' not 'explain.'"
+  matters: "It takes the Trinity off the math test and puts it back where it lives — in the Gloria, the benediction, the font you were baptized at."
+  wesleyan: "Wesley deleted the creed but kept this verse's instinct exactly: confess the fact, refuse to bind the manner, and let the doctrine be sung — Charles's whole Hymns on the Trinity."
+
 contested: high
 last_updated: 2026-05-18
 ---

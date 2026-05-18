@@ -39,6 +39,12 @@ related:
   - athanasian-creed/the-father-of-none-the-son-begotten-the-spirit-proceeding
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "In the Trinity none is before or after, none greater or less; the whole three persons are coequal and coeternal. A real order of origin, with zero gradation of worth."
+  stake: "Whether difference must mean ranking — the exact text at the center of the modern eternal-subordination dispute."
+  matters: "In the very being of God, to be from another is not to be worth less; this dignifies the dependent, the receptive, the second — and tells the anxious soul it is not lesser."
+  wesleyan: "'Of one substance, power, and eternity'; the God who is equal mutual love is the God who remakes us into that love — though Wesley grounds human equality in the image of God, not a direct read-off."
+
 contested: high
 last_updated: 2026-05-18
 ---

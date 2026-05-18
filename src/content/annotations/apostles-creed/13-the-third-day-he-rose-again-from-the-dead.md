@@ -48,6 +48,12 @@ related:
   - apostles-creed/he-ascended-into-heaven
   - apostles-creed/the-resurrection-of-the-body
 
+abstract:
+  gloss: "The clause that turns everything. Remove it and the rest of the creed collapses into the eulogy of a tragic Galilean."
+  stake: "Bodily, on the third day, really raised — not the disciples' inner transformation but an event done to a corpse."
+  matters: "The faith does not stand on a memory but on a living person; if he rose, the cross was not defeat and your dead are not lost."
+  wesleyan: "Wesley's resurrection is unambiguous and bodily (Article III, among the Methodist Restrictive Rules — 'took again his body')."
+
 contested: high
 last_updated: 2026-05-14
 ---

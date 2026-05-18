@@ -48,6 +48,12 @@ related:
   - nicene-creed/eternally-begotten-of-the-father
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "Many are called 'sons of God' in Scripture — Israel, kings, angels, believers by adoption. He is the Son: the unique, eternally-begotten one in whom all the others are made sons."
+  stake: "That his sonship is of a different kind — not adopted but his own; every other sonship is by being joined to his."
+  matters: "Your standing as God's child is not your achievement; it is adoption into the only Son's place, and it is secure because it is his."
+  wesleyan: "Sermon 5, 'Justification by Faith' — Christ alone the meritorious cause, the one Mediator; we are sons only in the Son."
+
 contested: medium
 last_updated: 2026-05-14
 ---

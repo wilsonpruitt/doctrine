@@ -47,6 +47,12 @@ related:
   - apostles-creed/the-third-day-he-rose-again
   - nicene-creed/will-come-again-to-judge
 
+abstract:
+  gloss: "On the third day he rose — bodily, really, 'in accordance with the Scriptures.' This single clause is the gospel itself."
+  stake: "Whether the resurrection is the earliest apostolic preaching (1 Corinthians 15) or a later symbol; the creed plants it at the structural center."
+  matters: "The faith does not stand on an inspiring memory but on a living person; if he is risen, everything else the creed says holds."
+  wesleyan: "Article III ('Christ did truly rise again ... took again his body'); for Wesley the resurrection is the ground of the new birth and the believer's hope."
+
 contested: medium
 last_updated: 2026-05-14
 ---

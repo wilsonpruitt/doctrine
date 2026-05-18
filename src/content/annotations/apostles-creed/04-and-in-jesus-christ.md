@@ -45,6 +45,12 @@ related:
   - apostles-creed/who-was-conceived-by-the-holy-spirit
   - apostles-creed/suffered-under-pontius-pilate
 
+abstract:
+  gloss: "A personal name (Jesus) bound to a messianic title (Christ): the whole Christian claim in two words — this particular man is the promised Anointed One."
+  stake: "Whether 'Christ' is a surname or a claim; the creed makes the central assertion in the smallest possible space."
+  matters: "The gospel is not an idea but a name — a first-century Galilean who is Israel's Messiah and so the turning-point of history."
+  wesleyan: "Wesley receives the threefold-office tradition (prophet, priest, king) and warms it into a personal, relational key — Christ for me."
+
 contested: high
 last_updated: 2026-05-14
 ---

@@ -47,6 +47,12 @@ related:
   - apostles-creed/the-resurrection-of-the-body
   - apostles-creed/and-the-life-everlasting
 
+abstract:
+  gloss: "This tells the truth about the church's membership: not only those in the room or alive on earth now, but the whole people, living and dead."
+  stake: "Who 'we' means when you say 'we believe' — the pronoun is bigger than the congregation, the denomination, or the present generation."
+  matters: "You do not believe alone; you are joined to a body death has not subtracted from, which steadies grief and loneliness alike."
+  wesleyan: "Wesley holds it in broad-church Reformation form — Article XIV rejects invoking the saints while keeping the communion that binds them to us."
+
 contested: medium
 last_updated: 2026-05-14
 ---

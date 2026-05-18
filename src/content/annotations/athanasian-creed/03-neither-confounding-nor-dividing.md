@@ -39,6 +39,12 @@ related:
   - nicene-creed/we-believe-in-one-god
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "Two rules fence the whole doctrine: do not blur the three persons into one, and do not split the one God into three. Orthodoxy is the road between those two ditches."
+  stake: "Nearly every popular 'explanation' of the Trinity falls into one ditch or the other; the verse names both so you can spot the error."
+  matters: "The single most useful catechetical tool there is — water/ice/steam, the shamrock, three men: run each past this verse and watch which ditch it lands in."
+  wesleyan: "Wesley's caution about pressing the word 'Person' on the unlearned is this verse applied to preaching — keep people out of both ditches without weaponizing the jargon."
+
 contested: high
 last_updated: 2026-05-18
 ---

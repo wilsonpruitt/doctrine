@@ -39,6 +39,12 @@ related:
   - athanasian-creed/such-as-the-father-is
   - nicene-creed/the-father-the-almighty
 
+abstract:
+  gloss: "Father, Son, and Spirit are almighty — and the Almighty includes the Son who was crucified."
+  stake: "What divine power is, if the one who holds all of it dies on a cross — and the answer to 'if God is almighty, why this?'"
+  matters: "At the graveside the answer is not a God of raw force who could have stopped it; it is the Almighty who entered the wound and went through it."
+  wesleyan: "Wesley held full omnipotence and added the Wesleyan note — God almightily chooses to persuade, not coerce; grace is real and resistible."
+
 contested: medium
 last_updated: 2026-05-18
 ---

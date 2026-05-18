@@ -48,6 +48,12 @@ related:
   - apostles-creed/was-crucified-died-and-buried
   - apostles-creed/he-descended-into-hell
 
+abstract:
+  gloss: "The eternal Son — true God — was really crucified under a named Roman governor, really died, was really buried. A dated, public, bodily death."
+  stake: "The one on the cross is God himself; and the death was real (a named magistrate, a real grave), not a symbol or a swoon."
+  matters: "God did not watch human death from outside; he entered it — which is why the cross can be trusted with your worst."
+  wesleyan: "Article II — 'truly suffered ... a sacrifice not only for original guilt but also for the actual sins of men'; the cross is for all, the engine of universal grace."
+
 contested: medium
 last_updated: 2026-05-14
 ---

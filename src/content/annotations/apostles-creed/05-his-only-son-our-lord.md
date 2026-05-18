@@ -48,6 +48,12 @@ related:
   - apostles-creed/and-is-seated-at-the-right-hand
   - nicene-creed/the-only-begotten-son-of-god
 
+abstract:
+  gloss: "Two titles bind to Jesus: 'only Son' names his relation to the Father, 'our Lord' his relation to us — the deepest doctrine and the most demanding ethic in one breath."
+  stake: "That the Galilean of the previous clause is the eternal Son — and therefore the rightful Lord of every life that confesses him."
+  matters: "You cannot keep the comfort of 'Son' and decline the claim of 'Lord'; the creed binds them — he is yours only as he is over you."
+  wesleyan: "Wesley was a firm Nicene — the Son 'of one substance, power, and eternity with the Father' (Letter to a Roman Catholic); not negotiable."
+
 contested: high
 last_updated: 2026-05-14
 ---

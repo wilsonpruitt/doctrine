@@ -48,6 +48,12 @@ related:
   - apostles-creed/his-only-son-our-lord
   - apostles-creed/and-is-seated-at-the-right-hand
 
+abstract:
+  gloss: "God is named Father first, then almighty: this Father is sovereign — not a raw power we afterward hope turns out to be fatherly."
+  stake: "The order is the theology — begin with omnipotence and ask if it is kind, or begin with the Father and find his power is his love's."
+  matters: "It decides what kind of universe you live in — ruled by power that might be loving, or by a love that happens to be almighty."
+  wesleyan: "The Wesleys subordinate omnipotence to love — 'pure, unbounded love'; power in the service of a Father's heart, not the reverse."
+
 contested: high
 last_updated: 2026-05-14
 ---

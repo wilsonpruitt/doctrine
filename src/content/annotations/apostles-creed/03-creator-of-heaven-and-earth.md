@@ -46,6 +46,12 @@ related:
   - apostles-creed/and-the-life-everlasting
   - nicene-creed/maker-of-heaven-and-earth
 
+abstract:
+  gloss: "'Heaven and earth' is a Hebrew way of saying everything; to confess God its creator is to confess God maker of all that is, full stop."
+  stake: "Not two regions but the totality — nothing that exists is uncreated, self-made, or beyond God's making."
+  matters: "There is no neutral ground and no rival origin; the world is gift, not accident, and so is your life within it."
+  wesleyan: "Wesley was an engaged natural theologian (his 'Survey of the Wisdom of God in the Creation') — the creation read as the Father's, science included."
+
 contested: medium
 last_updated: 2026-05-14
 ---

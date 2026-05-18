@@ -48,6 +48,12 @@ related:
   - nicene-creed/crucified-suffered-buried
   - apostles-creed/the-forgiveness-of-sins
 
+abstract:
+  gloss: "The creed changes its verb — not 'we believe in' but 'we acknowledge' one baptism for the forgiveness of sins. You do not trust into baptism; you confess it."
+  stake: "Why the grammar shifts: faith is entrusted into God, not into a rite — yet the one baptism really conveys what it signifies."
+  matters: "Your baptism is not a decision you might repeat but God's act you acknowledge; its forgiveness is once, sure, and outside you."
+  wesleyan: "Wesley's baptismal theology is robustly sacramental (Article XVII); the Methodist care is to hold baptismal grace together with the new birth, not against it."
+
 contested: high
 last_updated: 2026-05-15
 ---

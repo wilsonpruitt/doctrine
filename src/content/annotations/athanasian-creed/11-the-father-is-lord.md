@@ -39,6 +39,12 @@ related:
   - athanasian-creed/not-three-eternals-but-one
   - nicene-creed/one-lord-jesus-christ
 
+abstract:
+  gloss: "Father, Son, and Spirit are Lord — the divine Name itself, 'the LORD,' laid on Jesus and the Spirit; yet one Lord."
+  stake: "'Jesus is Lord' was the costliest sentence in the early church, because it meant 'and Caesar is not.' The creed's bland word carries the martyrs' blood."
+  matters: "Every confession of a Lord renounces rival lords — career, party, nation, the self. Barmen ('and not the Fuhrer') is this verse used rightly."
+  wesleyan: "Wesley turned the lordship of Christ against the slaveholder's lordship over persons (Thoughts upon Slavery); a lordship confessed must be obeyed, not only sung."
+
 contested: medium
 last_updated: 2026-05-18
 ---

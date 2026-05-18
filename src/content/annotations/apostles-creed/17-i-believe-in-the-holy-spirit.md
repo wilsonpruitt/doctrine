@@ -48,6 +48,12 @@ related:
   - apostles-creed/the-communion-of-saints
   - apostles-creed/the-forgiveness-of-sins
 
+abstract:
+  gloss: "The creed turns: from the Father and the Son to the Spirit — and everything after (church, forgiveness, resurrection) hangs on this clause."
+  stake: "To confess the Spirit is to confess that God has not finished — the saving work is being applied now, not only accomplished then."
+  matters: "God is not a past event you study but a present person at work in you; the Christian life is the Spirit's doing before it is yours."
+  wesleyan: "Methodism was, from its origin, a tradition of the Spirit (the revival as a pneumatological awakening; Wesley's 'The Witness of the Spirit')."
+
 contested: medium
 last_updated: 2026-05-14
 ---

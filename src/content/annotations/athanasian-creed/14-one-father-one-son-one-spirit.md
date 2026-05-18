@@ -39,6 +39,12 @@ related:
   - athanasian-creed/one-person-of-the-father
   - athanasian-creed/neither-confounding-nor-dividing
 
+abstract:
+  gloss: "One Father, not three; one Son, not three; one Spirit, not three. Each person is unrepeatable; the property that makes the Father the Father exists only once."
+  stake: "A subtle guard — not against three Gods but against multiplying or swapping the persons, as if they were interchangeable roles."
+  matters: "There is one Son and you are not him — and the gospel is better than that: you are loved in him, with his unlosable standing, because it was never yours to earn."
+  wesleyan: "The uniqueness of the one Son is the hinge of Wesleyan adoption — heirs with Christ, sons in the Son, a security that holds because it is his."
+
 contested: low
 last_updated: 2026-05-18
 ---

@@ -48,6 +48,12 @@ related:
   - nicene-creed/of-one-being-with-the-father
   - nicene-creed/through-him-all-things-were-made
 
+abstract:
+  gloss: "The Son's being 'begotten' is not an event in time — there was no moment the Father was without the Son. The Father is eternally Father."
+  stake: "The exact anti-Arian point: 'begotten' must not mean 'made' or 'began.' Eternal generation, not a first act."
+  matters: "The love between the Father and the Son had no beginning — it is what God eternally is, not something God took up; that is the bedrock under your security."
+  wesleyan: "'The very and eternal God' (Article II) names it; a line many pray weekly without being taught — the pastor's task is to make it live again."
+
 contested: high
 last_updated: 2026-05-14
 ---

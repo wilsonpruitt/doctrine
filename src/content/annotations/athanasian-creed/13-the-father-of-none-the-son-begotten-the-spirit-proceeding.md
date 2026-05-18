@@ -39,6 +39,12 @@ related:
   - athanasian-creed/one-person-of-the-father
   - athanasian-creed/compelled-and-forbidden
 
+abstract:
+  gloss: "The Father is from no one, the Son begotten of the Father, the Spirit proceeding from the Father and the Son — the only things that tell the persons apart."
+  stake: "The filioque — 'and the Son' — the clause that, with the warning clauses, divides East and West. Here it is native to the creed, not a later edit."
+  matters: "At the heart of reality is relation, not a solitary self; and the Spirit you receive is the Spirit of the Son, so he will never lead you away from Jesus — the church's test of the spirits."
+  wesleyan: "Wesley deleted the creed but kept the filioque (Article IV); his interest is the Spirit's Christ-shaped work — the Spirit of adoption who cries 'Abba.'"
+
 contested: high
 last_updated: 2026-05-18
 ---

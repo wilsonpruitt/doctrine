@@ -48,6 +48,12 @@ related:
   - apostles-creed/and-the-life-everlasting
   - apostles-creed/the-forgiveness-of-sins
 
+abstract:
+  gloss: "He will come again, and when he comes he will judge the living and the dead. The story of Jesus is not finished, and history is not unaccountable."
+  stake: "It refuses two escapes — a closed past with nothing more to come, and a history that never has to answer for itself."
+  matters: "Nothing is finally lost or finally gotten away with; the One who judges history is the One who was crucified by it."
+  wesleyan: "Wesley held the coming judgment with sober confidence and real preaching weight (Notes on Matthew 25, Romans 2, 2 Corinthians 5:10)."
+
 contested: high
 last_updated: 2026-05-14
 ---

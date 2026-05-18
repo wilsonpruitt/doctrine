@@ -48,6 +48,12 @@ related:
   - nicene-creed/on-the-third-day-he-rose
   - nicene-creed/one-holy-catholic-and-apostolic-church
 
+abstract:
+  gloss: "The same Spirit who is God spoke through the prophets — the inspirer of the word of God then, and in Scripture."
+  stake: "That revelation is the work of the divine Spirit, not human religious genius; the Bible's authority is the Spirit's voice."
+  matters: "When Scripture is read in church, the Spirit at work in you is the one who spoke it — reading is an encounter, not antiquarianism."
+  wesleyan: "Article V (Scripture contains all things necessary to salvation); Wesley's accent is practical — the Spirit who inspired the word applies it to the heart."
+
 contested: medium
 last_updated: 2026-05-15
 ---

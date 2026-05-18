@@ -48,6 +48,12 @@ related:
   - nicene-creed/the-life-of-the-world-to-come
   - apostles-creed/the-resurrection-of-the-body
 
+abstract:
+  gloss: "The verb changes a third time — not 'believe,' not 'acknowledge,' but 'we look for': the church's final posture is not 'we have' but 'we await' — the bodily raising of the dead."
+  stake: "Christian existence is forward-leaning expectation, and the hope is bodily — the dead raised, not souls merely surviving."
+  matters: "Grief is not denied but out-hoped; you bury a person in the certainty of a body raised, not only a memory consoled."
+  wesleyan: "Article III grounds our resurrection in Christ's own ('took again his body'); Wesley ties the hope to assurance and the universal scope of grace."
+
 contested: medium
 last_updated: 2026-05-15
 ---

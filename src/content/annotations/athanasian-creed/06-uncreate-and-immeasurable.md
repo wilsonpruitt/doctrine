@@ -40,6 +40,12 @@ related:
   - athanasian-creed/one-god-in-trinity
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "Father, Son, and Spirit are uncreated — on the Creator side of the one line that divides all reality — and unbounded. (The creed's 'incomprehensible' means immeasurable, not unintelligible.)"
+  stake: "The famous mistranslation that made the creed sound like nonsense — and the real claim under it: the Son and Spirit are not creatures at all."
+  matters: "The Creator/creature line is the working definition of idolatry — anything made, given ultimate weight, is a creature smuggled across it."
+  wesleyan: "Wesley preached the divine immensity directly (Sermon 118): the unbounded God you cannot flee is terror to the impenitent and comfort to the faithful."
+
 contested: medium
 last_updated: 2026-05-18
 ---

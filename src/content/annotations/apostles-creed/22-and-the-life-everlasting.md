@@ -47,6 +47,12 @@ related:
   - apostles-creed/the-resurrection-of-the-body
   - apostles-creed/from-thence-he-shall-come-to-judge
 
+abstract:
+  gloss: "The creed's last clause arcs back to its first: the God whose first act gives being now gives life that does not end. Not 'heaven' — life everlasting."
+  stake: "The hope is not the soul's escape to a non-material heaven but unending life in the renewed creation; 'heaven' is deliberately absent here."
+  matters: "What you are promised is not a disembodied elsewhere but life — full, bodily, unending — with God; it reframes how you live now."
+  wesleyan: "It is the natural close of the Methodist ordo salutis — prevenient, justifying, sanctifying, glorifying grace — glory the completion of grace, not its wage."
+
 contested: low
 last_updated: 2026-05-14
 ---

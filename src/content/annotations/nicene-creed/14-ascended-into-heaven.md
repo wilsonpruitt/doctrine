@@ -48,6 +48,12 @@ related:
   - nicene-creed/will-come-again-to-judge
   - apostles-creed/he-ascended-into-heaven
 
+abstract:
+  gloss: "He went up — not to leave the world but to be enthroned: seated at the Father's right hand, reigning and interceding now."
+  stake: "The ascension is not absence but the present-tense state of Christ — Lord and intercessor, not a departed teacher."
+  matters: "There is a human being on the throne of the universe who is, right now, praying for you; the comfort is in the present tense."
+  wesleyan: "Article III ('there sitteth, until he return'); Wesley's accent — the ascended Christ's continual intercession is the believer's standing security."
+
 contested: low
 last_updated: 2026-05-14
 ---

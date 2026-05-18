@@ -48,6 +48,12 @@ related:
   - nicene-creed/only-son-of-god
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "One Lord — the divine Name itself — borne by Jesus, the man of Nazareth, the Christ promised through the prophets. The earliest Christian confession in one phrase."
+  stake: "That the Lord of glory and the crucified Galilean are the same one; 'Jesus is Lord' was the church's first and costliest creed."
+  matters: "The name you are saved by is not an idea but a person with a history — born, crucified, risen — whom you can trust because he lived and died as one of us."
+  wesleyan: "Article II keeps Chalcedon verbatim; the one Lord is the whole Methodist ordo salutis — the same Christ who redeems and is met at the table."
+
 contested: medium
 last_updated: 2026-05-14
 ---

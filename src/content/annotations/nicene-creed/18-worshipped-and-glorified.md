@@ -48,6 +48,12 @@ related:
   - nicene-creed/of-one-being-with-the-father
   - nicene-creed/spoken-through-the-prophets
 
+abstract:
+  gloss: "Because the Spirit is Lord and life-giver, he is worshipped and glorified together with the Father and the Son — his deity confessed as praise, not argued."
+  stake: "The church's doxology is the proof: what is rightly worshipped is God; to glorify the Spirit is to confess him God."
+  matters: "You may pray to and adore the Spirit without idolatry; the church's sung life already confesses what the doctrine states."
+  wesleyan: "This is the living center of Methodist hymnody — 'of one substance, majesty, and glory' (Article IV); the Wesleys' Trinity hymns are this clause sung."
+
 contested: medium
 last_updated: 2026-05-15
 ---

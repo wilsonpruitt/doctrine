@@ -48,6 +48,12 @@ related:
   - apostles-creed/conceived-by-the-holy-spirit
   - apostles-creed/born-of-the-virgin-mary
 
+abstract:
+  gloss: "The eternal Son was enfleshed by the Spirit and the Virgin, and made man — not part of a human nature but a complete human being."
+  stake: "Two distinct claims: that he truly took flesh, and that what he took was whole humanity; both doors closed against a partial Incarnation."
+  matters: "He is not God in a human costume; he is fully one of us, so nothing human is foreign to the One who saves you."
+  wesleyan: "Wesley kept the catholic Marian language; the virgin conception confesses that the Incarnation is the work of God alone, not human achievement."
+
 contested: medium
 last_updated: 2026-05-14
 ---

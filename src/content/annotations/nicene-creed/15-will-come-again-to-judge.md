@@ -47,6 +47,12 @@ related:
   - apostles-creed/he-will-come-again-to-judge
   - apostles-creed/the-life-everlasting
 
+abstract:
+  gloss: "The same Christ who came, died, rose, and reigns will come again — to judge all, and to reign in a kingdom without end."
+  stake: "The church lives between the times; the faith is structured by a real future, not a closed past."
+  matters: "History is going somewhere, and the One coming to judge it is the One crucified for it; the judgment is the Christian's hope, not only dread."
+  wesleyan: "Wesley's 'The Great Assize' (Sermon 15) — the judgment preached with full seriousness and as the vindication, not the terror, of the faithful."
+
 contested: medium
 last_updated: 2026-05-14
 ---

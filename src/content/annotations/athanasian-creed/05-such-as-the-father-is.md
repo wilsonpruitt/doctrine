@@ -39,6 +39,12 @@ related:
   - athanasian-creed/one-god-in-trinity
   - nicene-creed/of-one-being-with-the-father
 
+abstract:
+  gloss: "Whatever the Father is in his deity, the Son is exactly that, and the Spirit exactly that — identical, not merely similar."
+  stake: "Not 'like' God (the old Arian compromise) but the same God; a single Greek letter's worth of difference is the whole gospel."
+  matters: "Whichever person you are dealing with at a given hour — the Father you pray to, the Son you trust, the Spirit convicting you — you are dealing with God in full, not a fraction."
+  wesleyan: "It closes the 'cafeteria Trinity': Wesley's experiential faith gives the believer distinct dealings with each person while insisting each touch is the touch of the whole God."
+
 contested: medium
 last_updated: 2026-05-18
 ---

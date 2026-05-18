@@ -39,6 +39,12 @@ related:
   - athanasian-creed/god-and-man-perfect-god-perfect-man
   - athanasian-creed/the-incarnation-of-our-lord
 
+abstract:
+  gloss: "Equal to the Father as to his Godhead, less than the Father as to his manhood — the same Christ, under two respects."
+  stake: "The single rule that makes 'I and the Father are one' and 'the Father is greater than I' both true of one Jesus: ask, in respect of which nature?"
+  matters: "It decodes the whole Gospel — the worshipped Lord and the hungry, weeping, dying man are one person; and the 'less' is the gospel: the equal One became lesser, for you."
+  wesleyan: "Wesley reads John 14:28 exactly so (the Father greater 'as Mediator'); Charles sings the descent — 'emptied himself of all but love.'"
+
 contested: high
 last_updated: 2026-05-18
 ---

@@ -47,6 +47,12 @@ related:
   - apostles-creed/and-was-buried
   - apostles-creed/descended-into-hell
 
+abstract:
+  gloss: "The faith's one universal symbol is an instrument of Roman execution. The creed names the doctrine by naming the act: he was crucified."
+  stake: "Not a crown or a book or a flame but a state torture device — the gospel pivots on a public, political killing."
+  matters: "God meets the world not at its best but at its cruelest; there is no human horror outside the reach of a crucified God."
+  wesleyan: "Wesley holds a broadly Reformed substitution — Christ bore our death in our place ('The Lord Our Righteousness'; 'Justification by Faith')."
+
 contested: high
 last_updated: 2026-05-14
 ---

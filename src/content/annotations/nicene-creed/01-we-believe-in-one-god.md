@@ -49,6 +49,12 @@ related:
   - nicene-creed/the-father-the-almighty
   - nicene-creed/maker-of-heaven-and-earth
 
+abstract:
+  gloss: "The church (the 'we'), confessing the one God of Israel — not the gods, not two gods — and 'believe' here means entrusting a life, not holding an opinion."
+  stake: "Which God you actually have. The modern question is not 'one or many' but whether the operative ultimate of your life is the God the creed names."
+  matters: "Luther's test — a god is whatever the heart hangs on; the creedal 'we' is the support against constructing a private deity alone."
+  wesleyan: "Article I is the Nicene one God; Wesley's ordo salutis is relentlessly trinitarian (the Father draws, the Son redeems, the Spirit sanctifies) — confess the fact, refuse to be forced to explain."
+
 contested: medium
 last_updated: 2026-05-14
 ---

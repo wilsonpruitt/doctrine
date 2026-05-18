@@ -46,6 +46,12 @@ related:
   - apostles-creed/and-was-buried
   - apostles-creed/descended-into-hell
 
+abstract:
+  gloss: "A Roman governor's name in the middle of the gospel — the only named human besides Mary. The faith is nailed to a date, not a myth."
+  stake: "Whether the gospel is timeless story (take what helps) or Roman history (it happened, all of it stands or falls together)."
+  matters: "Your faith does not rest on a beautiful idea but on something that happened to a real person under a real magistrate — so it can bear weight."
+  wesleyan: "For Wesley the Passion is to be felt, not observed at a distance — Aldersgate is receiving the suffering Christ as for me."
+
 contested: high
 last_updated: 2026-05-14
 ---

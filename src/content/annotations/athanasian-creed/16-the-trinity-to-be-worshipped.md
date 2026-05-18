@@ -39,6 +39,12 @@ related:
   - athanasian-creed/one-god-in-trinity
   - athanasian-creed/compelled-and-forbidden
 
+abstract:
+  gloss: "So, in all that has been said, the Trinity in Unity is to be worshipped. Part I ends where it began — at adoration — with the gentlest of the creed's three warnings."
+  stake: "Whether the metaphysics was the point, or the fence around the point. The creed brackets its hardest section, front and back, with the word 'worship.'"
+  matters: "You were never asked to master the drill, only to worship rightly; and the church's own middle warning, mild ('be thus minded,' no 'perish'), shows how to read the harsh ones."
+  wesleyan: "The most Wesleyan note in the creed — doctrine for doxology — and the one warning verb Wesley could almost own ('be thus minded'), unlike the perdition clauses he cut."
+
 contested: high
 last_updated: 2026-05-18
 ---

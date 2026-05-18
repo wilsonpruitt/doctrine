@@ -46,6 +46,12 @@ related:
   - apostles-creed/and-the-life-everlasting
   - apostles-creed/and-was-buried
 
+abstract:
+  gloss: "What happened to Christ on the third day happens to us: the resurrection of the flesh — this body raised — not the soul's escape from it."
+  stake: "The creed's hope is not 'I go to heaven when I die'; the word 'heaven' is not even here. It is the body, raised."
+  matters: "Your body is not a husk to discard; grief honors a person to be raised, and embodied life now has eternal dignity."
+  wesleyan: "Wesley's confession is unambiguous and biblical (Article III's implication for the believer) — bodily resurrection at the heart of his eschatology."
+
 contested: high
 last_updated: 2026-05-14
 ---

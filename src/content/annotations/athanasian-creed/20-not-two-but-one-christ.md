@@ -40,6 +40,12 @@ related:
   - athanasian-creed/neither-confounding-nor-dividing
   - nicene-creed/incarnate-of-the-virgin-mary
 
+abstract:
+  gloss: "Though God and man, he is not two but one Christ — not by the Godhead changing into flesh, but by the manhood taken into God; one person, two natures unconfused."
+  stake: "The keystone of Part II — and the atonement hangs on it: only one Christ can be God-in-our-flesh-for-us."
+  matters: "It cuts the nerve of both comfortable half-Christs — the relatable human Jesus kept apart from the divine one, and the 'divine' Jesus whose humanity was only scenery."
+  wesleyan: "Article II verbatim; Charles's 'widest extremes to join' is the hypostatic union in five words — the joining, not the explanation, is the gospel."
+
 contested: high
 last_updated: 2026-05-18
 ---

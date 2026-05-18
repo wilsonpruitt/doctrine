@@ -49,6 +49,12 @@ related:
   - nicene-creed/he-suffered-death-and-was-buried
   - articles-of-religion/article-iii-of-the-going-down-of-christ-into-hell
 
+abstract:
+  gloss: "'Hell' here is inferos — the realm of the dead, not the place of torment. The clause confesses that Christ's death was utterly real."
+  stake: "Which Latin form is older and what either means; the point is the reality and reach of his death, not a geography of damnation."
+  matters: "Wherever the dead are — including those who died outside the visible church — Christ has been there first; no one is past his reach."
+  wesleyan: "Wesley kept the clause in the prayed Creed but dropped Article III on the descent from his 1784 Articles — pray it, refuse to over-define it."
+
 contested: high
 last_updated: 2026-05-14
 ---

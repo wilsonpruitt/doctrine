@@ -41,6 +41,12 @@ related:
   - athanasian-creed/suffered-rose-ascended-will-judge
   - athanasian-creed/the-trinity-to-be-worshipped
 
+abstract:
+  gloss: "Those who did good to life everlasting, those who did evil to eternal fire; this is the catholic faith, which but for faithful belief one cannot be saved. The ring closes where it began."
+  stake: "Two hard things at once — judgment 'according to works' in a creed that confesses grace, and the perdition clause returned in full force."
+  matters: "The works are faith's fruit, not its root; it cuts both ways — comfort for the striving, warning for the complacent — and the church ends not in fire but in the Gloria."
+  wesleyan: "This clause, with the first, is why Wesley struck the creed: he kept every doctrine and would not damn by formula. The empty seat is itself the Methodist confession."
+
 contested: high
 last_updated: 2026-05-18
 ---

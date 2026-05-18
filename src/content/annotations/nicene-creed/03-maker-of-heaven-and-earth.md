@@ -48,6 +48,12 @@ related:
   - nicene-creed/the-father-the-almighty
   - nicene-creed/through-him-all-things-were-made
 
+abstract:
+  gloss: "God made everything that is not God — including the unseen world of angels and powers. Whatever is not God is creature; there is one creation."
+  stake: "Against every cosmology with a second eternal order or a lower demiurge: the spirit-world is made, not divine."
+  matters: "The gospel is cosmic, not a private rescue of the soul; the God who saves is the God who made the actual world and means to redeem it whole."
+  wesleyan: "Wesley's 'The General Deliverance' and 'The New Creation' — redemption reaches the whole groaning creation, the animals included; the world is 'very good.'"
+
 contested: medium
 last_updated: 2026-05-14
 ---
