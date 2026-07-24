@@ -18,6 +18,7 @@ export interface UIStrings {
   bannerReviewed: string;
   brand: string;
   navCreeds: string;
+  navGuides: string;
   navAbout: string;
   footer: { lead: string; difficultPassages: string };
 
@@ -67,6 +68,7 @@ const en: UIStrings = {
     'Translation reviewed by a native speaker. The English remains the authoritative text.',
   brand: 'Doctrine',
   navCreeds: 'Creeds',
+  navGuides: 'Guides',
   navAbout: 'About',
   footer: {
     lead: 'A Wroot Press reference companion to',
@@ -129,6 +131,7 @@ const es: UIStrings = {
     'Traducción revisada por un hablante nativo. El texto en inglés sigue siendo el autoritativo.',
   brand: 'Doctrine',
   navCreeds: 'Credos',
+  navGuides: 'Guías',
   navAbout: 'Acerca de',
   footer: {
     lead: 'Una obra de referencia de Wroot Press, compañera de',

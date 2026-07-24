@@ -25,6 +25,8 @@ const ui = UI[locale] ?? UI.en;
 const base = locale === 'en' ? '' : `/${locale}`;
 const homeHref = base || '/';
 const aboutHref = `${base}/about`;
+// Guides aren't translated per-locale yet — always link to the English index.
+const guidesHref = '/guides';
 
 // Language switcher. English is the complete superset, so on a translated
 // page the English counterpart is always the same path minus the locale
@@ -52,6 +54,7 @@ const switchHrefLang = isTranslation ? 'en' : 'es';
       <a href={homeHref} class="brand">{ui.brand}</a>
       <span class="navlinks">
         <a href={homeHref}>{ui.navCreeds}</a>
+        <a href={guidesHref}>{ui.navGuides}</a>
         <a href={aboutHref}>{ui.navAbout}</a>
         <a class="lang-switch" href={switchHref} hreflang={switchHrefLang} lang={switchHrefLang}>{switchLabel}</a>
       </span>
