@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { guides } from '../../data/guides';
+
+export async function getStaticPaths() {
+  return guides.map((guide) => ({ params: { slug: guide.slug }, props: { guide } }));
+}
+
+const { guide } = Astro.props;
+
+const liveDocs = await getCollection('documents', (d) => !d.data.draft && d.data.lang === 'en');
+const docMap = new Map(liveDocs.map((d) => [d.data.slug, d]));
+
+const briefHrefFor = (slug: string) =>
+  liveDocs.find((d) => d.data.slug === slug)?.data.family === 'ecumenical'
+    ? `/creeds/${slug}/brief`
+    : `/wesleyan/${slug}/brief`;
+
+const stops = guide.entries.map((entry) => {
+  const doc = docMap.get(entry.document);
+  return {
+    ...entry,
+    title: doc?.data.title ?? entry.document,
+    subtitle: doc?.data.subtitle,
+    href: briefHrefFor(entry.document),
+  };
+});
+---
+
+<Base
+  title={`${guide.title} — A Reading Path — Doctrine`}
+  description={guide.intro}
+>
+  <p class="crumbs">
+    <a href="/">Doctrine</a> · <a href="/guides">Guides</a> · {guide.title}
+  </p>
+  <h1>{guide.title}</h1>
+  <p class="lede">{guide.audience}</p>
+  <p class="brief-intro">{guide.intro}</p>
+
+  <ol class="guide-path">
+    {stops.map((s, i) => (
+      <li class="guide-stop">
+        <span class="guide-stop-n">{i + 1}</span>
+        <div>
+          <a class="doc-title" href={s.href}>{s.title}</a>
+          {s.subtitle && <span class="doc-subtitle">— {s.subtitle}</span>}
+          <p class="doc-summary">{s.why}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+</Base>

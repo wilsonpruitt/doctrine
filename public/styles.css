@@ -625,6 +625,53 @@ h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
   margin-left: auto;
 }
 
+/* Reading guides — a numbered path through the corpus's brief pages. */
+.guide-path {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.guide-stop {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.guide-stop-n {
+  font-family: var(--serif);
+  font-feature-settings: "onum" 1;
+  color: var(--ink-faint);
+  font-size: 0.95rem;
+  padding-top: 0.15rem;
+  text-align: right;
+}
+.guide-stop .doc-title {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.guide-stop .doc-title:hover {
+  border-bottom-color: var(--accent);
+}
+.guide-stop .doc-subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-left: 0.5rem;
+}
+.guide-stop .doc-summary {
+  font-family: var(--serif);
+  color: var(--ink-soft);
+  margin: 0.4rem 0 0;
+  line-height: 1.5;
+  max-width: 32rem;
+}
+
 /* Lay-reader abstract — the "What it says" on-ramp above the scholarly body.
    Rendered as the primary lead (no tint box), so the scholarly source-block
    below reads as secondary. See CONTRIBUTING / the doctrine memory. */

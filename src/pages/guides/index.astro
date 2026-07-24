@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import { guides } from '../../data/guides';
+---
+
+<Base
+  title="Reading Guides — Doctrine"
+  description="Curated reading paths through the corpus's brief pages, for specific audiences."
+>
+  <p class="crumbs">
+    <a href="/">Doctrine</a> · Guides
+  </p>
+  <h1>Reading Guides</h1>
+  <p class="brief-intro">
+    A guide is a short, ordered path through the corpus's plain-language
+    "brief" pages, built for one audience at a time.
+  </p>
+
+  <section class="toc-section">
+    <ol class="toc">
+      {guides.map((g) => (
+        <li>
+          <div>
+            <div class="entry-head">
+              <a class="doc-title" href={`/guides/${g.slug}`}>{g.title}</a>
+            </div>
+            <p class="doc-summary">{g.audience}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+</Base>
